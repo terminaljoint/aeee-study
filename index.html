@@ -3,157 +3,218 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AEEE 2026 — Complete Master Sheet (CSE Target)</title>
+<title>AEEE 2026 — Ultimate Master Sheet</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --bg: #0e0e11; --bg2: #14141a; --bg3: #1c1c24; --bg4: #252530;
-  --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.13);
-  --text: #e8e6f0; --text2: #9896a8; --text3: #5e5c6e;
-  --font: 'Syne', sans-serif; --mono: 'JetBrains Mono', monospace;
-  --m-acc: #7c6dfa; --m-lt: #b3abfc; --m-bg: rgba(124,109,250,0.08); --m-bd: rgba(124,109,250,0.22);
-  --p-acc: #2dd4bf; --p-lt: #7ee8da; --p-bg: rgba(45,212,191,0.07); --p-bd: rgba(45,212,191,0.20);
-  --c-acc: #f59e0b; --c-lt: #fcd34d; --c-bg: rgba(245,158,11,0.07); --c-bd: rgba(245,158,11,0.20);
-  --q-acc: #e879f9; --q-lt: #f0abfc; --q-bg: rgba(232,121,249,0.07); --q-bd: rgba(232,121,249,0.20);
-  --e-acc: #fb923c; --e-lt: #fdba74; --e-bg: rgba(251,146,60,0.07); --e-bd: rgba(251,146,60,0.20);
-  --ok: #4ade80; --warn: #fb923c; --danger: #f87171; --radius: 10px; --rsm: 6px;
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0e0e11;--bg2:#13131a;--bg3:#1a1a23;--bg4:#222230;--bg5:#2a2a3a;
+  --border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.12);--border3:rgba(255,255,255,0.20);
+  --text:#eceaf6;--text2:#9896aa;--text3:#5c5a6e;
+  --font:'Syne',sans-serif;--mono:'JetBrains Mono',monospace;
+  --m:#8b7ffc;--mlt:#c4befe;--mbg:rgba(139,127,252,0.09);--mbd:rgba(139,127,252,0.24);
+  --p:#2dd4bf;--plt:#7ee8da;--pbg:rgba(45,212,191,0.07);--pbd:rgba(45,212,191,0.22);
+  --c:#f59e0b;--clt:#fcd34d;--cbg:rgba(245,158,11,0.07);--cbd:rgba(245,158,11,0.22);
+  --q:#d946ef;--qlt:#f0abfc;--qbg:rgba(217,70,239,0.07);--qbd:rgba(217,70,239,0.22);
+  --e:#f97316;--elt:#fdba74;--ebg:rgba(249,115,22,0.07);--ebd:rgba(249,115,22,0.22);
+  --ok:#4ade80;--okbg:rgba(74,222,128,0.08);--okbd:rgba(74,222,128,0.28);
+  --warn:#fb923c;--wbg:rgba(251,146,60,0.08);--wbd:rgba(251,146,60,0.28);
+  --hot:#f87171;--hotbg:rgba(248,113,113,0.08);--hotbd:rgba(248,113,113,0.28);
+  --r:10px;--rs:6px;
 }
-body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.6; }
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
 
-/* ── Header ── */
-.hdr { padding: 28px 28px 0; max-width: 840px; margin: 0 auto; }
-.hdr-tag {
-  display: inline-flex; align-items: center; gap: 7px;
-  background: var(--m-bg); border: 1px solid var(--m-bd); color: var(--m-lt);
-  font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
-  padding: 4px 12px; border-radius: 20px; margin-bottom: 14px;
-}
-.hdr-tag::before { content: '◉'; font-size: 8px; }
-h1 {
-  font-size: clamp(20px, 4vw, 30px); font-weight: 800; line-height: 1.2; margin-bottom: 6px;
-  background: linear-gradient(130deg, #fff 25%, #a99dfc); -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; background-clip: text;
-}
-.hdr-sub { font-size: 13px; color: var(--text2); margin-bottom: 18px; max-width: 580px; }
+/* ── HEADER ── */
+.hdr{padding:28px 28px 0;max-width:860px;margin:0 auto}
+.hdr-pill{display:inline-flex;align-items:center;gap:6px;background:var(--mbg);border:1px solid var(--mbd);color:var(--mlt);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+.hdr-pill::before{content:'◉';font-size:8px}
+h1{font-size:clamp(20px,4vw,32px);font-weight:800;line-height:1.15;margin-bottom:5px;background:linear-gradient(128deg,#fff 20%,#b3abfc 70%,#7ee8da);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hdr-sub{font-size:13px;color:var(--text2);margin-bottom:20px;max-width:600px}
 
-/* ── Goal strip ── */
-.gstrip { max-width: 840px; margin: 0 auto; padding: 0 28px 20px; }
-.ginner {
-  background: var(--bg3); border: 1px solid var(--border2); border-radius: var(--radius);
-  padding: 12px 18px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center;
-}
-.gpill { display: flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 500; }
-.gpill .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
-.gpill span { color: var(--text2); } .gpill strong { color: var(--text); }
+/* ── GOAL STRIP ── */
+.gstrip{max-width:860px;margin:0 auto;padding:0 28px 16px}
+.ginner{background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r);padding:12px 18px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.gp{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:500}
+.gp .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.gp span{color:var(--text2)}.gp strong{color:var(--text)}
 
-/* ── Nav ── */
-.navwrap { max-width: 840px; margin: 0 auto; padding: 0 28px 18px; }
-.nav { display: flex; gap: 7px; flex-wrap: wrap; }
-.nbtn {
-  font-family: var(--font); font-size: 12px; font-weight: 600; letter-spacing: .02em;
-  padding: 7px 15px; border-radius: 20px; border: 1px solid var(--border2);
-  background: var(--bg3); color: var(--text2); cursor: pointer; transition: all .15s;
-}
-.nbtn:hover { color: var(--text); background: var(--bg4); }
-.am { background: var(--m-bg) !important; border-color: var(--m-bd) !important; color: var(--m-lt) !important; }
-.ap { background: var(--p-bg) !important; border-color: var(--p-bd) !important; color: var(--p-lt) !important; }
-.ac { background: var(--c-bg) !important; border-color: var(--c-bd) !important; color: var(--c-lt) !important; }
-.aq { background: var(--q-bg) !important; border-color: var(--q-bd) !important; color: var(--q-lt) !important; }
-.ae { background: var(--e-bg) !important; border-color: var(--e-bd) !important; color: var(--e-lt) !important; }
+/* ── DASHBOARD ── */
+.dash{max-width:860px;margin:0 auto;padding:0 28px 16px}
+.dash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px}
+.dcard{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:12px 14px;position:relative;overflow:hidden}
+.dcard::after{content:'';position:absolute;bottom:0;left:0;height:3px;width:var(--fill,0%);border-radius:0 0 0 var(--r);transition:width .4s ease}
+.dc-m::after{background:var(--m)}.dc-p::after{background:var(--p)}.dc-c::after{background:var(--c)}.dc-q::after{background:var(--q)}.dc-e::after{background:var(--e)}
+.dlabel{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.dc-m .dlabel{color:var(--mlt)}.dc-p .dlabel{color:var(--plt)}.dc-c .dlabel{color:var(--clt)}.dc-q .dlabel{color:var(--qlt)}.dc-e .dlabel{color:var(--elt)}
+.dscore{font-size:22px;font-weight:800;color:var(--text);line-height:1}
+.dprog{font-size:11px;color:var(--text3);margin-top:3px}
 
-/* ── Main ── */
-.main { max-width: 840px; margin: 0 auto; padding: 0 28px 60px; }
-.sec { display: none; } .sec.vis { display: block; }
+/* ── SEARCH ── */
+.srchwrap{max-width:860px;margin:0 auto;padding:0 28px 16px}
+.srch{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r);padding:10px 16px;font-family:var(--font);font-size:13px;color:var(--text);outline:none;transition:border-color .15s}
+.srch:focus{border-color:var(--m)}
+.srch::placeholder{color:var(--text3)}
+#srch-results{max-width:860px;margin:0 auto;padding:0 28px;display:none}
+.sr-item{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:8px 12px;margin-bottom:5px;cursor:pointer;transition:border-color .12s}
+.sr-item:hover{border-color:var(--border2)}
+.sr-topic{font-size:11px;color:var(--text3);margin-bottom:2px}
+.sr-formula{font-family:var(--mono);font-size:12px;color:var(--text);font-weight:500}
+.sr-note{font-size:12px;color:var(--text2)}
 
-/* ── Cards ── */
-.card {
-  background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius);
-  margin-bottom: 10px; overflow: hidden; transition: border-color .14s;
-}
-.card:hover { border-color: var(--border2); }
-.chdr {
-  padding: 13px 16px; display: flex; justify-content: space-between; align-items: center;
-  cursor: pointer; user-select: none; gap: 10px;
-}
-.chdr:hover { background: var(--bg3); }
-.ctitle { font-size: 14px; font-weight: 600; color: var(--text); flex: 1; }
-.cmeta { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
-.badge {
-  font-size: 10px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
-  padding: 2px 8px; border-radius: 20px; border: 1px solid;
-}
-.bm { background: var(--m-bg); color: var(--m-lt); border-color: var(--m-bd); }
-.bp { background: var(--p-bg); color: var(--p-lt); border-color: var(--p-bd); }
-.bc { background: var(--c-bg); color: var(--c-lt); border-color: var(--c-bd); }
-.bq { background: var(--q-bg); color: var(--q-lt); border-color: var(--q-bd); }
-.be { background: var(--e-bg); color: var(--e-lt); border-color: var(--e-bd); }
-.bnew { background: rgba(74,222,128,.1); color: var(--ok); border-color: rgba(74,222,128,.28); }
-.chev { font-size: 10px; color: var(--text3); transition: transform .18s; }
-.card.open .chev { transform: rotate(180deg); }
-.cbody { padding: 0 16px 16px; display: none; }
-.card.open .cbody { display: block; }
+/* ── NAV ── */
+.navwrap{max-width:860px;margin:0 auto;padding:0 28px 16px}
+.nav{display:flex;gap:7px;flex-wrap:wrap}
+.nbtn{font-family:var(--font);font-size:12px;font-weight:600;letter-spacing:.02em;padding:7px 15px;border-radius:20px;border:1px solid var(--border2);background:var(--bg3);color:var(--text2);cursor:pointer;transition:all .15s}
+.nbtn:hover{color:var(--text);background:var(--bg4)}
+.am{background:var(--mbg)!important;border-color:var(--mbd)!important;color:var(--mlt)!important}
+.ap{background:var(--pbg)!important;border-color:var(--pbd)!important;color:var(--plt)!important}
+.ac{background:var(--cbg)!important;border-color:var(--cbd)!important;color:var(--clt)!important}
+.aq{background:var(--qbg)!important;border-color:var(--qbd)!important;color:var(--qlt)!important}
+.ae{background:var(--ebg)!important;border-color:var(--ebd)!important;color:var(--elt)!important}
 
-/* ── Rows ── */
-.slbl {
-  font-size: 10px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
-  color: var(--text3); margin: 14px 0 7px;
-}
-.frow {
-  display: flex; gap: 10px; align-items: flex-start; padding: 7px 11px;
-  border-radius: var(--rsm); background: var(--bg3); border: 1px solid var(--border);
-  margin-bottom: 5px; transition: border-color .12s;
-}
-.frow:hover { border-color: var(--border2); }
-.fm { font-family: var(--mono); font-size: 12px; color: var(--text); font-weight: 500; min-width: 185px; flex-shrink: 0; line-height: 1.5; }
-.fn { font-size: 12px; color: var(--text2); line-height: 1.55; padding-top: 1px; }
-.crow {
-  padding: 6px 11px; border-left: 2px solid var(--border2);
-  border-radius: 0 var(--rsm) var(--rsm) 0; margin-bottom: 5px;
-}
-.crow p { font-size: 13px; color: var(--text); line-height: 1.6; }
-.crow span { font-size: 11px; color: var(--text3); display: block; margin-top: 2px; }
+/* ── MAIN ── */
+.main{max-width:860px;margin:0 auto;padding:0 28px 80px}
+.sec{display:none}.sec.vis{display:block}
 
-/* ── Tips ── */
-.tip { padding: 10px 13px; border-radius: var(--rsm); font-size: 12px; line-height: 1.6; margin-top: 11px; border: 1px solid; }
-.tm { background: var(--m-bg); border-color: var(--m-bd); color: var(--m-lt); }
-.tp { background: var(--p-bg); border-color: var(--p-bd); color: var(--p-lt); }
-.tc { background: var(--c-bg); border-color: var(--c-bd); color: var(--c-lt); }
-.tq { background: var(--q-bg); border-color: var(--q-bd); color: var(--q-lt); }
-.te { background: var(--e-bg); border-color: var(--e-bd); color: var(--e-lt); }
-.tw { background: rgba(251,146,60,.08); border-color: rgba(251,146,60,.28); color: var(--warn); }
-.tok { background: rgba(74,222,128,.07); border-color: rgba(74,222,128,.25); color: var(--ok); }
+/* ── CARDS ── */
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);margin-bottom:10px;overflow:hidden;transition:border-color .14s}
+.card:hover{border-color:var(--border2)}
+.card.done{border-color:rgba(74,222,128,0.2)!important;background:rgba(74,222,128,0.02)}
+.chdr{padding:13px 16px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;user-select:none;gap:10px}
+.chdr:hover{background:var(--bg3)}
+.cleft{display:flex;align-items:center;gap:10px;flex:1;min-width:0}
+.cchk{width:18px;height:18px;border-radius:5px;border:1.5px solid var(--border3);background:var(--bg4);cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .15s;font-size:10px}
+.card.done .cchk{background:rgba(74,222,128,0.15);border-color:var(--ok);color:var(--ok)}
+.ctitle{font-size:14px;font-weight:600;color:var(--text);line-height:1.3}
+.cmeta{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.badge{font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:2px 8px;border-radius:20px;border:1px solid}
+.bm{background:var(--mbg);color:var(--mlt);border-color:var(--mbd)}
+.bp{background:var(--pbg);color:var(--plt);border-color:var(--pbd)}
+.bc{background:var(--cbg);color:var(--clt);border-color:var(--cbd)}
+.bq{background:var(--qbg);color:var(--qlt);border-color:var(--qbd)}
+.be{background:var(--ebg);color:var(--elt);border-color:var(--ebd)}
+.bnew{background:var(--okbg);color:var(--ok);border-color:var(--okbd)}
+.bhot{background:var(--hotbg);color:var(--hot);border-color:var(--hotbd);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
+.chev{font-size:10px;color:var(--text3);transition:transform .18s;flex-shrink:0}
+.card.open .chev{transform:rotate(180deg)}
+.cbody{padding:0 16px 16px;display:none}
+.card.open .cbody{display:block}
 
-/* ── Divider ── */
-.divider { display: flex; align-items: center; gap: 10px; margin: 18px 0 10px; }
-.divider-line { flex: 1; height: 1px; background: var(--border); }
-.divider-lbl { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--text3); white-space: nowrap; }
+/* ── CONTENT ROWS ── */
+.slbl{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text3);margin:14px 0 7px}
+.frow{display:flex;gap:10px;align-items:flex-start;padding:7px 11px;border-radius:var(--rs);background:var(--bg3);border:1px solid var(--border);margin-bottom:5px;transition:border-color .12s}
+.frow:hover{border-color:var(--border2)}
+.fm{font-family:var(--mono);font-size:12px;color:var(--text);font-weight:500;min-width:188px;flex-shrink:0;line-height:1.5}
+.fn{font-size:12px;color:var(--text2);line-height:1.55;padding-top:1px}
+.crow{padding:6px 11px;border-left:2px solid var(--border2);border-radius:0 var(--rs) var(--rs) 0;margin-bottom:5px}
+.crow p{font-size:13px;color:var(--text);line-height:1.6}
+.crow span{font-size:11px;color:var(--text3);display:block;margin-top:2px}
 
-@media (max-width: 520px) {
-  .hdr, .navwrap, .gstrip, .main { padding-left: 14px; padding-right: 14px; }
-  .frow { flex-direction: column; gap: 3px; }
-  .fm { min-width: unset; }
+/* ── SPECIAL BLOCKS ── */
+.tip{padding:10px 13px;border-radius:var(--rs);font-size:12px;line-height:1.6;margin-top:10px;border:1px solid}
+.tm{background:var(--mbg);border-color:var(--mbd);color:var(--mlt)}
+.tp{background:var(--pbg);border-color:var(--pbd);color:var(--plt)}
+.tc{background:var(--cbg);border-color:var(--cbd);color:var(--clt)}
+.tq{background:var(--qbg);border-color:var(--qbd);color:var(--qlt)}
+.te{background:var(--ebg);border-color:var(--ebd);color:var(--elt)}
+.tok{background:var(--okbg);border-color:var(--okbd);color:var(--ok)}
+.tw{background:var(--wbg);border-color:var(--wbd);color:var(--warn)}
+.thot{background:var(--hotbg);border-color:var(--hotbd);color:var(--hot)}
+
+/* MCQ block */
+.mcq{margin-top:10px;background:var(--bg4);border:1px solid var(--border2);border-radius:var(--rs);padding:11px 13px}
+.mcq-label{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text3);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.mcq-label::before{content:'⚡';font-size:11px}
+.mcq-q{font-size:13px;color:var(--text);margin-bottom:8px;line-height:1.55}
+.mcq-opts{display:flex;flex-direction:column;gap:4px;margin-bottom:8px}
+.mcq-opt{font-size:12px;padding:5px 10px;border-radius:var(--rs);border:1px solid var(--border);background:var(--bg3);color:var(--text2);cursor:pointer;transition:all .14s}
+.mcq-opt:hover{border-color:var(--border2);color:var(--text)}
+.mcq-opt.correct{background:var(--okbg);border-color:var(--okbd);color:var(--ok);font-weight:600}
+.mcq-opt.wrong{background:var(--hotbg);border-color:var(--hotbd);color:var(--hot)}
+.mcq-opt.reveal-correct{background:var(--okbg);border-color:var(--okbd);color:var(--ok)}
+.mcq-hint{font-size:12px;color:var(--text2);display:none;padding-top:6px;border-top:1px solid var(--border);margin-top:4px;line-height:1.55}
+.mcq-hint.show{display:block}
+
+/* Trap block */
+.trap{margin-top:10px;background:var(--hotbg);border:1px solid var(--hotbd);border-radius:var(--rs);padding:10px 13px}
+.trap-label{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--hot);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.trap-label::before{content:'⚠'}
+.trap p{font-size:12px;color:#fca5a5;line-height:1.6}
+.trap li{font-size:12px;color:#fca5a5;line-height:1.7;margin-left:14px}
+
+/* Mnemonic block */
+.mnem{margin-top:10px;background:rgba(139,127,252,0.06);border:1px solid rgba(139,127,252,0.18);border-radius:var(--rs);padding:10px 13px}
+.mnem-label{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mlt);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.mnem-label::before{content:'🧠';font-size:11px}
+.mnem p{font-size:12px;color:var(--mlt);line-height:1.6}
+.mnem strong{color:#fff}
+
+/* Priority bar */
+.prio{display:flex;align-items:center;gap:8px;margin-bottom:12px;padding:8px 11px;background:var(--bg3);border-radius:var(--rs);border:1px solid var(--border)}
+.prio-label{font-size:11px;color:var(--text3);font-weight:600;flex-shrink:0}
+.prio-dots{display:flex;gap:4px}
+.pdot{width:10px;height:10px;border-radius:50%;background:var(--border2)}
+.pdot.lit-m{background:var(--m)}.pdot.lit-p{background:var(--p)}.pdot.lit-c{background:var(--c)}.pdot.lit-q{background:var(--q)}.pdot.lit-e{background:var(--e)}
+.prio-text{font-size:11px;color:var(--text2);margin-left:4px}
+
+/* Reset button */
+.reset-btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--font);font-size:11px;font-weight:600;color:var(--text3);background:none;border:1px solid var(--border);border-radius:20px;padding:5px 12px;cursor:pointer;transition:all .15s;margin-left:auto}
+.reset-btn:hover{border-color:var(--border2);color:var(--text2)}
+
+/* sticky bottom bar */
+.stickybar{position:fixed;bottom:0;left:0;right:0;background:rgba(14,14,17,0.95);backdrop-filter:blur(12px);border-top:1px solid var(--border2);padding:10px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;z-index:100;font-size:12px}
+.sbar-item{display:flex;align-items:center;gap:6px;font-weight:600}
+.sbar-total{font-size:14px;font-weight:800;color:var(--ok)}
+.sbar-mark{color:var(--text2);font-weight:400;margin-left:2px}
+.sbar-sep{color:var(--text3);font-size:10px}
+
+@media(max-width:520px){
+  .hdr,.navwrap,.gstrip,.dash,.srchwrap,.main{padding-left:14px;padding-right:14px}
+  .frow{flex-direction:column;gap:3px}.fm{min-width:unset}
+  .stickybar{font-size:11px;gap:10px;padding:8px 14px}
 }
 </style>
 </head>
 <body>
 
+<!-- ── HEADER ── -->
 <div class="hdr">
-  <div class="hdr-tag">Complete Master Sheet — Both Sheets Merged</div>
-  <h1>AEEE 2026 — All Formulas & Concepts<br>CSE Coimbatore Target (92+ Percentile)</h1>
-  <p class="hdr-sub">Every formula from your original sheet + all gap topics added. <span style="color:var(--ok);font-weight:600;">Green "NEW"</span> badges mark topics that were missing. Use this as your single study reference.</p>
+  <div class="hdr-pill">Ultimate Master Sheet — CSE Target</div>
+  <h1>AEEE 2026 — Complete Formula &amp; Concept Bible</h1>
+  <p class="hdr-sub">Every formula, every concept, MCQ practice per topic, common traps, mnemonics &amp; a progress tracker. Study this completely and you will not miss your target.</p>
 </div>
 
+<!-- ── GOAL STRIP ── -->
 <div class="gstrip">
   <div class="ginner">
-    <div class="gpill"><div class="dot" style="background:#4ade80"></div><span>Target:</span><strong>92–99 percentile</strong></div>
-    <div class="gpill"><div class="dot" style="background:#7c6dfa"></div><span>Score needed:</span><strong>210–240 / 300</strong></div>
-    <div class="gpill"><div class="dot" style="background:#f59e0b"></div><span>Slab 1:</span><strong>₹1.5L/yr</strong></div>
-    <div class="gpill"><div class="dot" style="background:#2dd4bf"></div><span>Slab 2:</span><strong>₹2.75L/yr</strong></div>
-    <div class="gpill"><div class="dot" style="background:#f87171"></div><span>Marking:</span><strong>+3 correct / −1 wrong</strong></div>
+    <div class="gp"><div class="dot" style="background:#4ade80"></div><span>Target:</span><strong>92–99 percentile</strong></div>
+    <div class="gp"><div class="dot" style="background:var(--m)"></div><span>Score needed:</span><strong>210–240 / 300</strong></div>
+    <div class="gp"><div class="dot" style="background:var(--c)"></div><span>Slab 1 fee:</span><strong>₹1.5L / yr</strong></div>
+    <div class="gp"><div class="dot" style="background:var(--p)"></div><span>Slab 2 fee:</span><strong>₹2.75L / yr</strong></div>
+    <div class="gp"><div class="dot" style="background:var(--hot)"></div><span>Penalty:</span><strong>−1 wrong · 0 skip · +3 correct</strong></div>
   </div>
 </div>
 
+<!-- ── DASHBOARD ── -->
+<div class="dash">
+  <div class="dash-grid">
+    <div class="dcard dc-m" id="dc-m"><div class="dlabel">Maths</div><div class="dscore" id="ds-m">0/9</div><div class="dprog" id="dp-m">0% mastered</div></div>
+    <div class="dcard dc-p" id="dc-p"><div class="dlabel">Physics</div><div class="dscore" id="ds-p">0/10</div><div class="dprog" id="dp-p">0% mastered</div></div>
+    <div class="dcard dc-c" id="dc-c"><div class="dlabel">Chemistry</div><div class="dscore" id="ds-c">0/10</div><div class="dprog" id="dp-c">0% mastered</div></div>
+    <div class="dcard dc-q" id="dc-q"><div class="dlabel">Quant</div><div class="dscore" id="ds-q">0/3</div><div class="dprog" id="dp-q">0% mastered</div></div>
+    <div class="dcard dc-e" id="dc-e"><div class="dlabel">English</div><div class="dscore" id="ds-e">0/2</div><div class="dprog" id="dp-e">0% mastered</div></div>
+    <div class="dcard" style="border-color:var(--okbd);background:var(--okbg)"><div class="dlabel" style="color:var(--ok)">Total</div><div class="dscore" id="ds-total">0/34</div><div class="dprog" id="dp-total">Tick cards as you master them</div></div>
+  </div>
+</div>
+
+<!-- ── SEARCH ── -->
+<div class="srchwrap">
+  <input class="srch" type="text" id="srch" placeholder="🔍  Search any formula or concept… e.g. 'half life' or 'nCr'" oninput="doSearch(this.value)">
+</div>
+<div id="srch-results"></div>
+
+<!-- ── NAV ── -->
 <div class="navwrap">
   <div class="nav">
     <button class="nbtn am" onclick="show('m',this,'am')">Maths</button>
@@ -161,818 +222,1036 @@ h1 {
     <button class="nbtn" onclick="show('c',this,'ac')">Chemistry</button>
     <button class="nbtn" onclick="show('q',this,'aq')">Quant Aptitude</button>
     <button class="nbtn" onclick="show('e',this,'ae')">English</button>
+    <button class="reset-btn" onclick="resetAll()">↺ Reset progress</button>
   </div>
 </div>
 
 <div class="main">
 
-<!-- ════════════════════════════════
-     MATHS
-════════════════════════════════ -->
+<!-- ══════════════════════════════════════
+     MATHS  (9 topics)
+══════════════════════════════════════ -->
 <div class="sec vis" id="sec-m">
 
-<!-- CALCULUS -->
-<div class="card open">
+<div class="card open" data-id="m1" data-subj="m">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Calculus — Limits, Differentiation, Integration</span>
-    <div class="cmeta"><span class="badge bm">9–10 Qs</span><span class="chev">▼</span></div>
+    <div class="cleft">
+      <div class="cchk" onclick="event.stopPropagation();markDone(this)" title="Mark as mastered">✓</div>
+      <span class="ctitle">Calculus — Limits, Differentiation, Integration</span>
+    </div>
+    <div class="cmeta"><span class="badge bm">9–10 Qs</span><span class="badge bhot">🔥 HIGHEST YIELD</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
-    <div class="slbl">Key limits to memorize</div>
-    <div class="frow"><span class="fm">lim(x→0) sinx/x = 1</span><span class="fn">Most repeated limit. Also: lim tanx/x = 1</span></div>
-    <div class="frow"><span class="fm">lim(x→0)(1+x)^(1/x) = e</span><span class="fn">Definition of e. Variants appear often.</span></div>
-    <div class="frow"><span class="fm">lim(x→a)(xⁿ−aⁿ)/(x−a) = naⁿ⁻¹</span><span class="fn">Use when you see (xⁿ−aⁿ) form</span></div>
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-m"></div><div class="pdot lit-m"></div><div class="pdot lit-m"></div><div class="pdot lit-m"></div><div class="pdot lit-m"></div></div><span class="prio-text">5/5 — Most marks in Maths. Do this first.</span></div>
+    <div class="slbl">Key limits</div>
+    <div class="frow"><span class="fm">lim(x→0) sinx/x = 1</span><span class="fn">Also: lim tanx/x = 1 and lim(x→0)(1−cosx)/x² = ½</span></div>
+    <div class="frow"><span class="fm">lim(x→0)(1+x)^(1/x) = e</span><span class="fn">Definition of e. Variant: lim(1+1/n)ⁿ = e as n→∞</span></div>
+    <div class="frow"><span class="fm">lim(x→a)(xⁿ−aⁿ)/(x−a) = naⁿ⁻¹</span><span class="fn">Use when you see (xⁿ−aⁿ) form directly</span></div>
     <div class="slbl">Differentiation rules</div>
-    <div class="frow"><span class="fm">d/dx(xⁿ) = nxⁿ⁻¹</span><span class="fn">Power rule — backbone of all differentiation</span></div>
+    <div class="frow"><span class="fm">d/dx(xⁿ) = nxⁿ⁻¹</span><span class="fn">Power rule — used in almost every question</span></div>
     <div class="frow"><span class="fm">d/dx(uv) = u'v + uv'</span><span class="fn">Product rule</span></div>
     <div class="frow"><span class="fm">d/dx(u/v) = (u'v − uv') / v²</span><span class="fn">Quotient rule</span></div>
-    <div class="frow"><span class="fm">Chain: dy/dx = dy/du · du/dx</span><span class="fn">Composite function differentiation</span></div>
-    <div class="frow"><span class="fm">d/dx(sinx)=cosx, d/dx(cosx)=−sinx</span><span class="fn">Trig derivatives — memorize all 6</span></div>
-    <div class="frow"><span class="fm">d/dx(eˣ)=eˣ, d/dx(ln x)=1/x</span><span class="fn">Exponential/log derivatives</span></div>
+    <div class="frow"><span class="fm">Chain: dy/dx = dy/du · du/dx</span><span class="fn">Composite function — most common differentiation type</span></div>
+    <div class="frow"><span class="fm">d/dx(sinx)=cosx · d/dx(cosx)=−sinx</span><span class="fn">Also: d/dx(tanx)=sec²x · d/dx(secx)=secx·tanx</span></div>
+    <div class="frow"><span class="fm">d/dx(eˣ)=eˣ · d/dx(ln x)=1/x</span><span class="fn">Exponential/log — tested every year</span></div>
     <div class="slbl">Integration formulas</div>
-    <div class="frow"><span class="fm">∫xⁿ dx = xⁿ⁺¹/(n+1) + C</span><span class="fn">Most used integration formula</span></div>
-    <div class="frow"><span class="fm">∫sinx dx = −cosx + C</span><span class="fn">Basic trig integral</span></div>
-    <div class="frow"><span class="fm">∫cosx dx = sinx + C</span><span class="fn">Basic trig integral</span></div>
-    <div class="frow"><span class="fm">∫eˣ dx = eˣ + C</span><span class="fn">Standard result</span></div>
-    <div class="frow"><span class="fm">∫1/x dx = ln|x| + C</span><span class="fn">Standard result</span></div>
-    <div class="frow"><span class="fm">∫1/(x²+a²)dx = (1/a)tan⁻¹(x/a)+C</span><span class="fn">Very commonly tested form</span></div>
-    <div class="frow"><span class="fm">Area = ∫ₐᵇ f(x) dx</span><span class="fn">Area under curve between x=a and x=b</span></div>
-    <div class="tip tm">Exam trick: Most AEEE integration questions are substitution type. Spot the derivative of inner function in numerator → use u-substitution directly.</div>
+    <div class="frow"><span class="fm">∫xⁿ dx = xⁿ⁺¹/(n+1) + C</span><span class="fn">Power rule for integration</span></div>
+    <div class="frow"><span class="fm">∫sinx dx=−cosx+C · ∫cosx dx=sinx+C</span><span class="fn">Basic trig integrals</span></div>
+    <div class="frow"><span class="fm">∫eˣ dx=eˣ+C · ∫1/x dx=ln|x|+C</span><span class="fn">Standard results — memorize both</span></div>
+    <div class="frow"><span class="fm">∫1/(x²+a²)dx = (1/a)tan⁻¹(x/a)+C</span><span class="fn">Very commonly tested — recognize this form fast</span></div>
+    <div class="frow"><span class="fm">Area = ∫ₐᵇ |f(x)| dx</span><span class="fn">Area between curve and x-axis — use |f(x)| if curve goes below x-axis</span></div>
+    <div class="mcq">
+      <div class="mcq-label">Practice MCQ — Exam Pattern</div>
+      <div class="mcq-q">If f(x) = x³ − 3x, then f'(x) at x = 2 is:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt" onclick="pickOpt(this,false)">A) 3</div>
+        <div class="mcq-opt" onclick="pickOpt(this,true)">B) 9</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">C) 6</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">D) 12</div>
+      </div>
+      <div class="mcq-hint">f'(x) = 3x²−3. At x=2: 3(4)−3 = 12−3 = <strong>9</strong>. Apply power rule term by term, then substitute.</div>
+    </div>
+    <div class="trap"><div class="trap-label">Common Traps</div><ul><li>Forgetting the "+C" in indefinite integration — AEEE often includes it as a wrong-answer trap option.</li><li>Mixing up d/dx(cosx) = −sinx (negative!) — very common error under exam pressure.</li><li>Area questions: if f(x) is negative in part of range, split the integral and take absolute values.</li></ul></div>
+    <div class="tip tm">AEEE integration shortcut: if numerator = derivative of denominator → answer is ln|denominator| + C. Spot this pattern in 2 seconds.</div>
   </div>
 </div>
 
-<!-- ALGEBRA -->
-<div class="card open">
+<div class="card" data-id="m2" data-subj="m">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Algebra — Matrices, Determinants, Quadratic Equations, Sequences</span>
-    <div class="cmeta"><span class="badge bm">8–10 Qs</span><span class="chev">▼</span></div>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Algebra — Matrices, Determinants, Quadratics, AP/GP</span></div>
+    <div class="cmeta"><span class="badge bm">8–10 Qs</span><span class="badge bhot">🔥 HIGHEST YIELD</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-m"></div><div class="pdot lit-m"></div><div class="pdot lit-m"></div><div class="pdot lit-m"></div><div class="pdot lit-m"></div></div><span class="prio-text">5/5 — Equal to Calculus in marks. Do this second.</span></div>
     <div class="slbl">Matrices & Determinants</div>
-    <div class="frow"><span class="fm">|A| for 2×2 = ad − bc</span><span class="fn">Determinant of [[a,b],[c,d]]</span></div>
-    <div class="frow"><span class="fm">A⁻¹ = adj(A) / |A|</span><span class="fn">Inverse matrix formula — |A| ≠ 0 required</span></div>
-    <div class="frow"><span class="fm">(AB)⁻¹ = B⁻¹A⁻¹</span><span class="fn">Reversal law for inverse</span></div>
-    <div class="frow"><span class="fm">Rank: row reduce to echelon form</span><span class="fn">Count non-zero rows after reduction</span></div>
+    <div class="frow"><span class="fm">|A| 2×2 = ad − bc</span><span class="fn">For matrix [[a,b],[c,d]] — expand along any row/column for 3×3</span></div>
+    <div class="frow"><span class="fm">A⁻¹ = adj(A) / |A|</span><span class="fn">Only if |A| ≠ 0. adj = transpose of cofactor matrix.</span></div>
+    <div class="frow"><span class="fm">(AB)⁻¹ = B⁻¹A⁻¹</span><span class="fn">Reversal law — order flips for inverse of product</span></div>
     <div class="slbl">Quadratic equations</div>
-    <div class="frow"><span class="fm">x = (−b ± √(b²−4ac)) / 2a</span><span class="fn">Quadratic formula — memorize this exactly</span></div>
-    <div class="frow"><span class="fm">Sum of roots = −b/a</span><span class="fn">For ax²+bx+c=0</span></div>
-    <div class="frow"><span class="fm">Product of roots = c/a</span><span class="fn">Very frequently tested directly</span></div>
-    <div class="frow"><span class="fm">D = b²−4ac: >0 real, =0 equal, <0 complex</span><span class="fn">Discriminant tells you nature of roots</span></div>
-    <div class="slbl">AP and GP</div>
-    <div class="frow"><span class="fm">AP nth term: a + (n−1)d</span><span class="fn">a = first term, d = common difference</span></div>
-    <div class="frow"><span class="fm">AP Sum: n/2 × [2a + (n−1)d]</span><span class="fn">Sum of n terms of AP</span></div>
-    <div class="frow"><span class="fm">GP nth term: ar^(n−1)</span><span class="fn">r = common ratio</span></div>
-    <div class="frow"><span class="fm">GP Sum: a(rⁿ−1) / (r−1)</span><span class="fn">When r ≠ 1</span></div>
-    <div class="frow"><span class="fm">Infinite GP Sum = a / (1−r), |r| < 1</span><span class="fn">Very commonly tested</span></div>
-    <div class="slbl">Binomial theorem</div>
-    <div class="frow"><span class="fm">(a+b)ⁿ = Σ C(n,r)·aⁿ⁻ʳ·bʳ</span><span class="fn">General term: T(r+1) = C(n,r)·aⁿ⁻ʳ·bʳ</span></div>
+    <div class="frow"><span class="fm">x = (−b ± √(b²−4ac)) / 2a</span><span class="fn">Quadratic formula — memorize exactly as written</span></div>
+    <div class="frow"><span class="fm">Sum of roots α+β = −b/a</span><span class="fn">For ax²+bx+c=0. Product αβ = c/a</span></div>
+    <div class="frow"><span class="fm">D = b²−4ac</span><span class="fn">D>0: real distinct · D=0: real equal · D<0: complex conjugate</span></div>
+    <div class="slbl">AP · GP · Series</div>
+    <div class="frow"><span class="fm">AP: Tₙ = a+(n−1)d · S = n/2[2a+(n−1)d]</span><span class="fn">a = first term, d = common difference. Sum of first n naturals = n(n+1)/2</span></div>
+    <div class="frow"><span class="fm">GP: Tₙ = arⁿ⁻¹ · S = a(rⁿ−1)/(r−1)</span><span class="fn">Infinite GP (|r|<1): S∞ = a/(1−r)</span></div>
+    <div class="frow"><span class="fm">Σn = n(n+1)/2 · Σn² = n(n+1)(2n+1)/6</span><span class="fn">Σn³ = [n(n+1)/2]² — the perfect square shortcut</span></div>
+    <div class="frow"><span class="fm">Binomial: T(r+1) = C(n,r)·aⁿ⁻ʳ·bʳ</span><span class="fn">Middle term: if n is even → T(n/2+1). Identify r from power of b.</span></div>
+    <div class="mcq">
+      <div class="mcq-label">Practice MCQ</div>
+      <div class="mcq-q">Sum of roots of 2x² − 5x + 3 = 0 is:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt" onclick="pickOpt(this,false)">A) 3/2</div>
+        <div class="mcq-opt" onclick="pickOpt(this,true)">B) 5/2</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">C) −5/2</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">D) 5</div>
+      </div>
+      <div class="mcq-hint">Sum = −b/a = −(−5)/2 = <strong>5/2</strong>. Product = c/a = 3/2. Don't forget the sign — −b/a, not b/a.</div>
+    </div>
+    <div class="trap"><div class="trap-label">Common Traps</div><ul><li>Sum of roots = −b/a NOT +b/a. The negative sign is the most frequently missed point.</li><li>For GP infinite sum: formula only valid when |r| < 1. Check this before applying.</li><li>For 3×3 determinant: expand correctly — alternate + and − signs along a row.</li></ul></div>
+    <div class="mnem"><div class="mnem-label">Memory Anchor</div><p>For quadratic ax²+bx+c: roots' <strong>S</strong>um = <strong>−b/a</strong>, <strong>P</strong>roduct = <strong>c/a</strong>. Remember "<strong>SP = −b/a · c/a</strong>"</p></div>
   </div>
 </div>
 
-<!-- COORDINATE GEOMETRY -->
-<div class="card open">
+<div class="card" data-id="m3" data-subj="m">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Coordinate Geometry — Lines, Circles, Conics</span>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Coordinate Geometry — Lines, Circles, Conics</span></div>
     <div class="cmeta"><span class="badge bm">5–6 Qs</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-m"></div><div class="pdot lit-m"></div><div class="pdot lit-m"></div><div class="pdot lit-m"></div><div class="pdot"></div></div><span class="prio-text">4/5 — Formulaic. Full marks if you remember the forms.</span></div>
     <div class="slbl">Straight lines</div>
-    <div class="frow"><span class="fm">Slope m = (y₂−y₁) / (x₂−x₁)</span><span class="fn">Slope between two points</span></div>
-    <div class="frow"><span class="fm">y − y₁ = m(x − x₁)</span><span class="fn">Point-slope form — most used</span></div>
-    <div class="frow"><span class="fm">Distance = √[(x₂−x₁)²+(y₂−y₁)²]</span><span class="fn">Distance between two points</span></div>
-    <div class="frow"><span class="fm">|ax₁+by₁+c| / √(a²+b²)</span><span class="fn">Distance from point to line ax+by+c=0</span></div>
-    <div class="frow"><span class="fm">Parallel: m₁=m₂ | Perp: m₁×m₂=−1</span><span class="fn">Conditions for parallel / perpendicular lines</span></div>
+    <div class="frow"><span class="fm">m = (y₂−y₁)/(x₂−x₁)</span><span class="fn">Slope. Line equations: y=mx+c (slope-intercept), y−y₁=m(x−x₁) (point-slope)</span></div>
+    <div class="frow"><span class="fm">Dist point to line = |ax₁+by₁+c|/√(a²+b²)</span><span class="fn">For line ax+by+c=0 and point (x₁,y₁)</span></div>
+    <div class="frow"><span class="fm">Parallel: m₁=m₂ · Perp: m₁·m₂=−1</span><span class="fn">Perpendicular slope = −1/m (negative reciprocal)</span></div>
+    <div class="frow"><span class="fm">Angle between lines: tanθ = |m₁−m₂|/|1+m₁m₂|</span><span class="fn">AEEE asks "acute angle between two lines" — use this formula</span></div>
     <div class="slbl">Circles</div>
-    <div class="frow"><span class="fm">(x−h)² + (y−k)² = r²</span><span class="fn">Standard form — centre (h,k), radius r</span></div>
+    <div class="frow"><span class="fm">(x−h)²+(y−k)²=r²</span><span class="fn">Standard form — centre (h,k), radius r</span></div>
     <div class="frow"><span class="fm">x²+y²+2gx+2fy+c=0</span><span class="fn">General form — centre (−g,−f), radius = √(g²+f²−c)</span></div>
-    <div class="slbl">Parabola, Ellipse, Hyperbola</div>
-    <div class="frow"><span class="fm">y²=4ax: focus(a,0), directrix x=−a</span><span class="fn">Standard parabola — know focus and directrix</span></div>
-    <div class="frow"><span class="fm">x²/a² + y²/b² = 1</span><span class="fn">Ellipse — a>b; vertices at (±a, 0)</span></div>
-    <div class="frow"><span class="fm">x²/a² − y²/b² = 1</span><span class="fn">Hyperbola — asymptotes y = ±(b/a)x</span></div>
+    <div class="slbl">Conics</div>
+    <div class="frow"><span class="fm">Parabola y²=4ax: focus (a,0), directrix x=−a</span><span class="fn">Length of latus rectum = 4a. Vertex at origin.</span></div>
+    <div class="frow"><span class="fm">Ellipse x²/a²+y²/b²=1 (a>b)</span><span class="fn">Vertices (±a,0); foci (±c,0) where c²=a²−b²; e=c/a<1</span></div>
+    <div class="frow"><span class="fm">Hyperbola x²/a²−y²/b²=1</span><span class="fn">Asymptotes y=±(b/a)x; foci (±c,0) where c²=a²+b²; e>1</span></div>
+    <div class="trap"><div class="trap-label">Common Traps</div><ul><li>General form of circle: centre is (−g,−f), NOT (+g,+f). The signs flip!</li><li>For ellipse: if b>a then vertices are on y-axis: (0,±b). Don't assume major axis is always x-axis.</li></ul></div>
+    <div class="mcq">
+      <div class="mcq-label">Practice MCQ</div>
+      <div class="mcq-q">The centre of circle x²+y²−6x+4y−12=0 is:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt" onclick="pickOpt(this,false)">A) (−3, 2)</div>
+        <div class="mcq-opt" onclick="pickOpt(this,true)">B) (3, −2)</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">C) (6, −4)</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">D) (3, 2)</div>
+      </div>
+      <div class="mcq-hint">2g=−6 → g=−3; 2f=4 → f=2. Centre = (−g,−f) = <strong>(3,−2)</strong>. Radius = √(9+4+12) = 5.</div>
+    </div>
   </div>
 </div>
 
-<!-- VECTORS, 3D, PROBABILITY -->
-<div class="card open">
+<div class="card" data-id="m4" data-subj="m">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Vectors, Probability & Binomial Distribution</span>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Vectors, Probability & Binomial Distribution</span></div>
     <div class="cmeta"><span class="badge bm">5–7 Qs</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-m"></div><div class="pdot lit-m"></div><div class="pdot lit-m"></div><div class="pdot lit-m"></div><div class="pdot"></div></div><span class="prio-text">4/5 — Vectors+Probability appear every paper.</span></div>
     <div class="slbl">Vectors</div>
-    <div class="frow"><span class="fm">|a| = √(x²+y²+z²)</span><span class="fn">Magnitude of vector a = xi+yj+zk</span></div>
-    <div class="frow"><span class="fm">a·b = |a||b|cosθ</span><span class="fn">Dot product — use to find angle between vectors</span></div>
-    <div class="frow"><span class="fm">a·b = x₁x₂+y₁y₂+z₁z₂</span><span class="fn">Component form of dot product</span></div>
-    <div class="frow"><span class="fm">|a×b| = |a||b|sinθ</span><span class="fn">Magnitude of cross product</span></div>
-    <div class="frow"><span class="fm">a⊥b when a·b=0, a∥b when a×b=0</span><span class="fn">Perpendicular and parallel conditions</span></div>
+    <div class="frow"><span class="fm">|a| = √(x²+y²+z²)</span><span class="fn">Magnitude of a = xi+yj+zk</span></div>
+    <div class="frow"><span class="fm">a·b = |a||b|cosθ = x₁x₂+y₁y₂+z₁z₂</span><span class="fn">Dot product — use component form for calculation, magnitude form for angle</span></div>
+    <div class="frow"><span class="fm">a×b: |a×b| = |a||b|sinθ</span><span class="fn">Cross product magnitude. a⊥b ↔ a·b=0. a∥b ↔ a×b=0</span></div>
+    <div class="frow"><span class="fm">Unit vector â = a / |a|</span><span class="fn">Always divide vector by its magnitude to get unit vector</span></div>
     <div class="slbl">Probability</div>
-    <div class="frow"><span class="fm">P(A) = n(A) / n(S)</span><span class="fn">Basic probability definition</span></div>
-    <div class="frow"><span class="fm">P(A∪B) = P(A)+P(B)−P(A∩B)</span><span class="fn">Addition rule</span></div>
-    <div class="frow"><span class="fm">P(A|B) = P(A∩B) / P(B)</span><span class="fn">Conditional probability</span></div>
-    <div class="frow"><span class="fm">Bayes: P(A|B)=P(B|A)P(A)/P(B)</span><span class="fn">Usually 1 direct question in exam</span></div>
-    <div class="frow"><span class="fm">Binomial: P(X=r) = C(n,r)·pʳ·qⁿ⁻ʳ</span><span class="fn">q = 1−p; mean = np; variance = npq</span></div>
+    <div class="frow"><span class="fm">P(A) = n(A)/n(S)</span><span class="fn">Basic definition. P(A') = 1−P(A) (complement)</span></div>
+    <div class="frow"><span class="fm">P(A∪B) = P(A)+P(B)−P(A∩B)</span><span class="fn">If mutually exclusive: P(A∩B)=0, so P(A∪B)=P(A)+P(B)</span></div>
+    <div class="frow"><span class="fm">P(A|B) = P(A∩B)/P(B)</span><span class="fn">Conditional probability. Bayes: P(A|B)=P(B|A)·P(A)/P(B)</span></div>
+    <div class="frow"><span class="fm">Binomial P(X=r) = C(n,r)pʳqⁿ⁻ʳ</span><span class="fn">q=1−p. Mean=np. Variance=npq. SD=√(npq)</span></div>
+    <div class="trap"><div class="trap-label">Common Traps</div><ul><li>"At least 1" probability: always use 1 − P(none) instead of adding individual cases.</li><li>Independent events: P(A∩B)=P(A)·P(B). Mutually exclusive: P(A∩B)=0. These are different!</li></ul></div>
   </div>
 </div>
 
-<!-- TRIGONOMETRY — NEW -->
-<div class="card">
+<div class="card" data-id="m5" data-subj="m">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Trigonometry — Identities, Values & Heights/Distances</span>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Trigonometry — Identities, Values & Heights/Distances</span></div>
     <div class="cmeta"><span class="badge bm">4–5 Qs</span><span class="badge bnew">NEW</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-m"></div><div class="pdot lit-m"></div><div class="pdot lit-m"></div><div class="pdot lit-m"></div><div class="pdot lit-m"></div></div><span class="prio-text">5/5 — Pure formula recall. One sitting to master all of this.</span></div>
     <div class="slbl">Fundamental identities</div>
-    <div class="frow"><span class="fm">sin²θ + cos²θ = 1</span><span class="fn">Most used. Also: sin²θ = 1−cos²θ, cos²θ = 1−sin²θ</span></div>
-    <div class="frow"><span class="fm">1 + tan²θ = sec²θ</span><span class="fn">Divide sin²+cos²=1 by cos²θ</span></div>
-    <div class="frow"><span class="fm">1 + cot²θ = cosec²θ</span><span class="fn">Divide sin²+cos²=1 by sin²θ</span></div>
+    <div class="frow"><span class="fm">sin²θ + cos²θ = 1</span><span class="fn">The most used. Derive: sin²θ=1−cos²θ, cos²θ=1−sin²θ</span></div>
+    <div class="frow"><span class="fm">1+tan²θ = sec²θ</span><span class="fn">Divide identity by cos²θ. Also: 1+cot²θ = cosec²θ</span></div>
     <div class="slbl">Compound & double angle</div>
-    <div class="frow"><span class="fm">sin(A±B) = sinAcosB ± cosAsinB</span><span class="fn">Essential — used in almost every trig problem</span></div>
-    <div class="frow"><span class="fm">cos(A±B) = cosAcosB ∓ sinAsinB</span><span class="fn">Note: sign flips for cos</span></div>
-    <div class="frow"><span class="fm">tan(A+B) = (tanA+tanB)/(1−tanAtanB)</span><span class="fn">tan(A−B): change both signs</span></div>
-    <div class="frow"><span class="fm">sin2A = 2sinAcosA</span><span class="fn">Also: 2tanA/(1+tan²A)</span></div>
-    <div class="frow"><span class="fm">cos2A = cos²A−sin²A = 2cos²A−1 = 1−2sin²A</span><span class="fn">Three equivalent forms — all tested</span></div>
-    <div class="frow"><span class="fm">tan2A = 2tanA / (1−tan²A)</span><span class="fn">Used in simplification questions</span></div>
-    <div class="slbl">Standard values</div>
-    <div class="frow"><span class="fm">sin: 0°=0, 30°=½, 45°=1/√2, 60°=√3/2, 90°=1</span><span class="fn">Memorize this row completely</span></div>
-    <div class="frow"><span class="fm">cos: 0°=1, 30°=√3/2, 45°=1/√2, 60°=½, 90°=0</span><span class="fn">cos values are sin in reverse order</span></div>
-    <div class="frow"><span class="fm">tan: 0°=0, 30°=1/√3, 45°=1, 60°=√3, 90°=∞</span><span class="fn">tan90° is undefined</span></div>
+    <div class="frow"><span class="fm">sin(A±B) = sinAcosB ± cosAsinB</span><span class="fn">Signs match for sin. For cos they cross.</span></div>
+    <div class="frow"><span class="fm">cos(A±B) = cosAcosB ∓ sinAsinB</span><span class="fn">Note: sign OPPOSITE to ± for cos</span></div>
+    <div class="frow"><span class="fm">tan(A+B) = (tanA+tanB)/(1−tanAtanB)</span><span class="fn">A−B: flip both signs in numerator and denominator</span></div>
+    <div class="frow"><span class="fm">sin2A=2sinAcosA · cos2A=1−2sin²A=2cos²A−1</span><span class="fn">Three forms of cos2A — all tested. Also: cos2A=cos²A−sin²A</span></div>
+    <div class="frow"><span class="fm">tan2A = 2tanA/(1−tan²A)</span><span class="fn">Useful for simplification problems</span></div>
+    <div class="slbl">Standard values (MUST memorize)</div>
+    <div class="frow"><span class="fm">sin: 0, ½, 1/√2, √3/2, 1 for 0°→90°</span><span class="fn">cos values are the reverse: 1, √3/2, 1/√2, ½, 0</span></div>
+    <div class="frow"><span class="fm">tan: 0, 1/√3, 1, √3, ∞ for 0°→90°</span><span class="fn">tan90° = undefined (∞). tan45° = 1 exactly.</span></div>
     <div class="slbl">Heights & distances</div>
-    <div class="frow"><span class="fm">tanθ = height / base</span><span class="fn">Angle of elevation from ground — θ is at observer</span></div>
-    <div class="frow"><span class="fm">Sine rule: a/sinA = b/sinB = c/sinC</span><span class="fn">Non-right triangles — two angles + one side given</span></div>
-    <div class="frow"><span class="fm">Cosine rule: a² = b²+c² − 2bc·cosA</span><span class="fn">Use when all 3 sides or 2 sides + included angle given</span></div>
-    <div class="tip tm">Most AEEE trig problems use sin²+cos²=1 or double angle formulas. If you see "simplify", substitute identities directly rather than computing angles.</div>
+    <div class="frow"><span class="fm">tanθ = height/base (angle of elevation)</span><span class="fn">Angle at observer's eye level looking UP</span></div>
+    <div class="frow"><span class="fm">Sine rule: a/sinA = b/sinB = c/sinC = 2R</span><span class="fn">R = circumradius. Use when 2 angles + 1 side known.</span></div>
+    <div class="frow"><span class="fm">Cosine rule: a²=b²+c²−2bc·cosA</span><span class="fn">Use when all 3 sides or 2 sides + included angle given</span></div>
+    <div class="mcq">
+      <div class="mcq-label">Practice MCQ</div>
+      <div class="mcq-q">sin75° = ?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt" onclick="pickOpt(this,false)">A) (√3−1)/2√2</div>
+        <div class="mcq-opt" onclick="pickOpt(this,true)">B) (√3+1)/2√2</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">C) (√3+1)/√2</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">D) √3/2</div>
+      </div>
+      <div class="mcq-hint">sin75°=sin(45°+30°)=sin45°cos30°+cos45°sin30° = (1/√2)(√3/2)+(1/√2)(1/2) = (√3+1)/(2√2)</div>
+    </div>
+    <div class="mnem"><div class="mnem-label">Memory Anchor — Standard Values</div><p>sin values for 0°,30°,45°,60°,90°: think of <strong>√0/2, √1/2, √2/2, √3/2, √4/2</strong> = 0, ½, 1/√2, √3/2, 1. The numerators are just √0 to √4!</p></div>
+    <div class="trap"><div class="trap-label">Common Traps</div><ul><li>cos(A+B) ≠ cosA+cosB. Never expand like algebraic addition!</li><li>cos2A has THREE forms — match to whatever's given in the question to simplify cleanly.</li></ul></div>
   </div>
 </div>
 
-<!-- PERMUTATIONS & COMBINATIONS — NEW -->
-<div class="card">
+<div class="card" data-id="m6" data-subj="m">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Permutations & Combinations</span>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Permutations & Combinations</span></div>
     <div class="cmeta"><span class="badge bm">3–4 Qs</span><span class="badge bnew">NEW</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
-    <div class="frow"><span class="fm">nPr = n! / (n−r)!</span><span class="fn">Arrangement of r items from n (order matters)</span></div>
-    <div class="frow"><span class="fm">nCr = n! / [r!(n−r)!]</span><span class="fn">Selection of r items from n (order doesn't matter)</span></div>
-    <div class="frow"><span class="fm">nCr = nC(n−r)</span><span class="fn">Symmetry property — always use to simplify</span></div>
-    <div class="frow"><span class="fm">nC0 = nCn = 1</span><span class="fn">Choosing none or all = 1 way</span></div>
-    <div class="frow"><span class="fm">Arrangements with repeats: n!/p!q!...</span><span class="fn">p, q = count of identical elements</span></div>
-    <div class="crow"><p>Circular arrangement of n distinct objects = (n−1)!</p><span>Necklace/bracelet (can flip): (n−1)!/2</span></div>
-    <div class="crow"><p>At least one condition: Total − (none of the condition)</p><span>E.g. "at least one girl" = Total − (all boys)</span></div>
-    <div class="tip tm">If question says "arrange" → use P. If "choose/select/form team" → use C. Most AEEE questions are direct substitution.</div>
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-m"></div><div class="pdot lit-m"></div><div class="pdot lit-m"></div><div class="pdot lit-m"></div><div class="pdot"></div></div><span class="prio-text">4/5 — Direct formula substitution. Quick marks.</span></div>
+    <div class="frow"><span class="fm">nPr = n!/(n−r)!</span><span class="fn">Arrangement — ORDER matters. "Arrange", "in a row", "first/second"</span></div>
+    <div class="frow"><span class="fm">nCr = n!/[r!(n−r)!]</span><span class="fn">Selection — ORDER doesn't matter. "Choose", "team", "committee"</span></div>
+    <div class="frow"><span class="fm">nCr = nC(n−r) · nC0=nCn=1</span><span class="fn">Symmetry: C(10,3) = C(10,7). Use to simplify large values.</span></div>
+    <div class="frow"><span class="fm">n with repeats: n!/p!q!r!...</span><span class="fn">p,q,r = counts of each repeated element. e.g. MISSISSIPPI</span></div>
+    <div class="frow"><span class="fm">Circular: (n−1)!</span><span class="fn">Necklace/bracelet (can flip): (n−1)!/2</span></div>
+    <div class="crow"><p>At least one = Total − (none). e.g. "at least one girl" = All − All boys.</p></div>
+    <div class="crow"><p>Distributing n identical into r distinct groups = C(n+r−1, r−1)</p></div>
+    <div class="mcq">
+      <div class="mcq-label">Practice MCQ</div>
+      <div class="mcq-q">In how many ways can 5 people be seated around a circular table?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt" onclick="pickOpt(this,false)">A) 120</div>
+        <div class="mcq-opt" onclick="pickOpt(this,true)">B) 24</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">C) 60</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">D) 5</div>
+      </div>
+      <div class="mcq-hint">Circular arrangement = (n−1)! = (5−1)! = 4! = <strong>24</strong>. For circular arrangements, one person is fixed as reference — so n! becomes (n−1)!.</div>
+    </div>
+    <div class="trap"><div class="trap-label">Common Traps</div><ul><li>Circular vs linear: circular = (n−1)!, NOT n!. Very common wrong-answer option.</li><li>"At least 2" = Total − (none) − (exactly 1). Don't just compute "none".</li></ul></div>
   </div>
 </div>
 
-<!-- COMPLEX NUMBERS — NEW -->
-<div class="card">
+<div class="card" data-id="m7" data-subj="m">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Complex Numbers</span>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Complex Numbers</span></div>
     <div class="cmeta"><span class="badge bm">2–3 Qs</span><span class="badge bnew">NEW</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
-    <div class="frow"><span class="fm">i² = −1, i³ = −i, i⁴ = 1</span><span class="fn">Powers of i cycle every 4: check remainder when exponent ÷ 4</span></div>
-    <div class="frow"><span class="fm">z = a + ib; |z| = √(a²+b²)</span><span class="fn">Modulus (magnitude) of complex number</span></div>
-    <div class="frow"><span class="fm">z̄ = a − ib (conjugate)</span><span class="fn">To divide z₁/z₂: multiply top and bottom by conjugate of z₂</span></div>
-    <div class="frow"><span class="fm">z · z̄ = |z|² = a² + b²</span><span class="fn">Always a real number — key property</span></div>
-    <div class="frow"><span class="fm">arg(z) = tan⁻¹(b/a)</span><span class="fn">Angle with positive x-axis — check which quadrant</span></div>
-    <div class="frow"><span class="fm">z = r(cosθ + i sinθ)</span><span class="fn">Polar form; r = |z|, θ = arg(z)</span></div>
-    <div class="frow"><span class="fm">(cosθ+i sinθ)ⁿ = cosnθ + i sinnθ</span><span class="fn">De Moivre's theorem — nth power / roots</span></div>
-    <div class="crow"><p>Cube roots of unity: 1, ω, ω² where ω³=1</p><span>Key properties: 1+ω+ω²=0 and ω³=1 — memorize both</span></div>
-    <div class="tip tm">Most MCQs test: (1) powers of i — divide exponent by 4, take remainder, (2) |z| calculations, (3) conjugate multiplication for division.</div>
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-m"></div><div class="pdot lit-m"></div><div class="pdot lit-m"></div><div class="pdot"></div><div class="pdot"></div></div><span class="prio-text">3/5 — 2-3 marks. Fast to learn.</span></div>
+    <div class="frow"><span class="fm">i²=−1 · i³=−i · i⁴=1</span><span class="fn">Powers cycle every 4. For iⁿ: find n mod 4. Remainder 0→1, 1→i, 2→−1, 3→−i</span></div>
+    <div class="frow"><span class="fm">z=a+ib · |z|=√(a²+b²)</span><span class="fn">Modulus = distance from origin in Argand plane</span></div>
+    <div class="frow"><span class="fm">z̄ = a−ib · z·z̄ = a²+b² = |z|²</span><span class="fn">Conjugate: flip sign of imaginary part. Product always real.</span></div>
+    <div class="frow"><span class="fm">arg(z) = tan⁻¹(b/a) → check quadrant</span><span class="fn">z=r(cosθ+i sinθ): polar form. r=|z|, θ=arg(z)</span></div>
+    <div class="frow"><span class="fm">De Moivre: (cosθ+i sinθ)ⁿ = cosnθ+i sinnθ</span><span class="fn">Used to find nth power / roots of complex numbers</span></div>
+    <div class="crow"><p>Cube roots of unity: ω=e^(2πi/3). Properties: ω³=1 and 1+ω+ω²=0 — memorize both.</p></div>
+    <div class="mcq">
+      <div class="mcq-label">Practice MCQ</div>
+      <div class="mcq-q">Value of i⁴⁷ is:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt" onclick="pickOpt(this,false)">A) 1</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">B) −1</div>
+        <div class="mcq-opt" onclick="pickOpt(this,true)">C) −i</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">D) i</div>
+      </div>
+      <div class="mcq-hint">47 ÷ 4 = 11 remainder <strong>3</strong>. Remainder 3 → i³ = <strong>−i</strong>. Always divide exponent by 4 and use the remainder.</div>
+    </div>
+    <div class="trap"><div class="trap-label">Common Traps</div><ul><li>Division z₁/z₂: always multiply top and bottom by conjugate of denominator. Never just cancel.</li><li>arg(z): the formula tan⁻¹(b/a) gives reference angle — you must adjust based on which quadrant a and b are in.</li></ul></div>
   </div>
 </div>
 
-<!-- STATISTICS & REASONING — NEW -->
-<div class="card">
+<div class="card" data-id="m8" data-subj="m">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Statistics & Mathematical Reasoning</span>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Statistics & Mathematical Reasoning (Logic)</span></div>
     <div class="cmeta"><span class="badge bm">2–3 Qs</span><span class="badge bnew">NEW</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-m"></div><div class="pdot lit-m"></div><div class="pdot lit-m"></div><div class="pdot"></div><div class="pdot"></div></div><span class="prio-text">3/5 — Pure logic/recall. No calculation needed for reasoning.</span></div>
     <div class="slbl">Statistics</div>
-    <div class="frow"><span class="fm">Mean = Σfx / Σf</span><span class="fn">For grouped data; x = midpoint, f = frequency</span></div>
-    <div class="frow"><span class="fm">Variance σ² = Σfx²/Σf − (x̄)²</span><span class="fn">Easier computational form</span></div>
-    <div class="frow"><span class="fm">Std deviation σ = √(Variance)</span><span class="fn">AEEE usually asks for variance or SD directly</span></div>
-    <div class="frow"><span class="fm">Median: middle value (sort data first)</span><span class="fn">For grouped: L + [(n/2 − cf)/f] × h</span></div>
-    <div class="frow"><span class="fm">Mode: most frequent value</span><span class="fn">For grouped: L + [f₁−f₀ / 2f₁−f₀−f₂] × h</span></div>
-    <div class="slbl">Mathematical reasoning (logic)</div>
-    <div class="crow"><p>Contrapositive of "If P then Q" is "If not Q then not P" — same truth value as original</p></div>
-    <div class="crow"><p>Converse: "If Q then P". Inverse: "If not P then not Q". Neither is equivalent to original.</p></div>
-    <div class="crow"><p>p ∧ q (AND): true only when BOTH true. p ∨ q (OR): false only when BOTH false.</p></div>
-    <div class="crow"><p>Negation of "all X are Y" → "some X are not Y". Negation of "some X are Y" → "no X are Y".</p></div>
-    <div class="tip tm">Reasoning questions are pure logic — no calculation. Identify statement type, apply contrapositive or negation. Easy 3 marks if you know the rules.</div>
+    <div class="frow"><span class="fm">Mean = Σfx/Σf</span><span class="fn">x = class midpoint for grouped data</span></div>
+    <div class="frow"><span class="fm">Variance σ² = Σfx²/Σf − (x̄)²</span><span class="fn">Compute this form — easier than deviation form</span></div>
+    <div class="frow"><span class="fm">σ = √Variance · CV = (σ/x̄)×100</span><span class="fn">CV = Coefficient of Variation (used for comparison between data sets)</span></div>
+    <div class="slbl">Mathematical reasoning</div>
+    <div class="crow"><p>Contrapositive of "P→Q" is "¬Q→¬P" — logically equivalent (same truth value)</p></div>
+    <div class="crow"><p>Converse: "Q→P". Inverse: "¬P→¬Q". Both different from original.</p></div>
+    <div class="crow"><p>p∧q (AND): T only when both T. p∨q (OR): F only when both F.</p></div>
+    <div class="crow"><p>Negation: ¬(all X are Y) = "some X are not Y". ¬(some X are Y) = "no X are Y".</p></div>
+    <div class="mcq">
+      <div class="mcq-label">Practice MCQ</div>
+      <div class="mcq-q">The contrapositive of "If it rains, the match is cancelled" is:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt" onclick="pickOpt(this,false)">A) If it doesn't rain, the match is not cancelled</div>
+        <div class="mcq-opt" onclick="pickOpt(this,true)">B) If the match is not cancelled, it didn't rain</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">C) If the match is cancelled, it rained</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">D) If it rains, the match is not cancelled</div>
+      </div>
+      <div class="mcq-hint">Contrapositive of P→Q is ¬Q→¬P. P = "it rains", Q = "match cancelled". ¬Q = "match not cancelled", ¬P = "it didn't rain" → <strong>"If match not cancelled, it didn't rain."</strong></div>
+    </div>
   </div>
 </div>
 
-<!-- 3D GEOMETRY — NEW -->
-<div class="card">
+<div class="card" data-id="m9" data-subj="m">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">3D Geometry — Lines & Planes in Space</span>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">3D Geometry — Lines & Planes in Space</span></div>
     <div class="cmeta"><span class="badge bm">2 Qs</span><span class="badge bnew">NEW</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
-    <div class="frow"><span class="fm">l²+m²+n² = 1</span><span class="fn">l, m, n are direction cosines of a line</span></div>
-    <div class="frow"><span class="fm">cosθ = l₁l₂+m₁m₂+n₁n₂</span><span class="fn">Angle between two lines by direction cosines</span></div>
-    <div class="frow"><span class="fm">(x−x₁)/a = (y−y₁)/b = (z−z₁)/c</span><span class="fn">Symmetric form of line; a,b,c = direction ratios</span></div>
-    <div class="frow"><span class="fm">ax + by + cz = d (plane)</span><span class="fn">General plane equation; a,b,c = normal vector</span></div>
-    <div class="frow"><span class="fm">dist = |ax₁+by₁+cz₁−d| / √(a²+b²+c²)</span><span class="fn">Distance from point (x₁,y₁,z₁) to plane</span></div>
-    <div class="tip tm">3D Geometry AEEE questions are: (1) angle between lines/planes, or (2) distance from point to plane. These two formulas cover ~80% of cases.</div>
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-m"></div><div class="pdot lit-m"></div><div class="pdot lit-m"></div><div class="pdot"></div><div class="pdot"></div></div><span class="prio-text">3/5 — 2 guaranteed marks with just 5 formulas.</span></div>
+    <div class="frow"><span class="fm">l²+m²+n²=1</span><span class="fn">l,m,n = direction cosines. Always satisfy this identity.</span></div>
+    <div class="frow"><span class="fm">cosθ = l₁l₂+m₁m₂+n₁n₂</span><span class="fn">Angle between two lines given direction cosines</span></div>
+    <div class="frow"><span class="fm">(x−x₁)/a = (y−y₁)/b = (z−z₁)/c</span><span class="fn">Symmetric form of 3D line; a,b,c = direction ratios</span></div>
+    <div class="frow"><span class="fm">ax+by+cz=d (general plane)</span><span class="fn">Normal vector = (a,b,c). a,b,c determine orientation of plane.</span></div>
+    <div class="frow"><span class="fm">dist = |ax₁+by₁+cz₁−d|/√(a²+b²+c²)</span><span class="fn">Distance from point (x₁,y₁,z₁) to plane ax+by+cz=d</span></div>
+    <div class="tip tm">3D geometry MCQs are one of two types: (1) angle between lines — use cosine formula, (2) point-to-plane distance — use the formula above. Know these two and you won't drop marks here.</div>
   </div>
 </div>
 
 </div><!-- end maths -->
 
-<!-- ════════════════════════════════
-     PHYSICS
-════════════════════════════════ -->
+<!-- ══════════════════════════════════════
+     PHYSICS (10 topics)
+══════════════════════════════════════ -->
 <div class="sec" id="sec-p">
 
-<!-- MODERN PHYSICS -->
-<div class="card open">
+<div class="card open" data-id="p1" data-subj="p">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Modern Physics — Photoelectric, Atomic, Nuclear</span>
-    <div class="cmeta"><span class="badge bp">4–5 Qs</span><span class="chev">▼</span></div>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Modern Physics — Photoelectric, Atomic, Nuclear</span></div>
+    <div class="cmeta"><span class="badge bp">4–5 Qs</span><span class="badge bhot">🔥 HIGHEST YIELD</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-p"></div><div class="pdot lit-p"></div><div class="pdot lit-p"></div><div class="pdot lit-p"></div><div class="pdot lit-p"></div></div><span class="prio-text">5/5 — Half-life + Bohr model appear in EVERY paper.</span></div>
     <div class="slbl">Photoelectric effect</div>
-    <div class="frow"><span class="fm">E = hf = hc/λ</span><span class="fn">Energy of a photon; h = 6.63×10⁻³⁴ J·s</span></div>
-    <div class="frow"><span class="fm">KE_max = hf − φ</span><span class="fn">Einstein's equation; φ = work function</span></div>
-    <div class="frow"><span class="fm">eV_stop = KE_max</span><span class="fn">Stopping potential formula</span></div>
-    <div class="frow"><span class="fm">λ_dB = h / mv</span><span class="fn">de Broglie wavelength of a particle</span></div>
+    <div class="frow"><span class="fm">E = hf = hc/λ</span><span class="fn">Photon energy. h=6.63×10⁻³⁴ J·s, c=3×10⁸ m/s</span></div>
+    <div class="frow"><span class="fm">KE_max = hf − φ</span><span class="fn">Einstein's equation. φ = work function = hf₀ (threshold frequency)</span></div>
+    <div class="frow"><span class="fm">eV_stop = KE_max · λ_dB = h/mv</span><span class="fn">Stopping potential. de Broglie wavelength of particle.</span></div>
     <div class="slbl">Bohr's atomic model</div>
-    <div class="frow"><span class="fm">rₙ = 0.529n²/Z Å</span><span class="fn">Radius of nth orbit (Z = atomic number)</span></div>
-    <div class="frow"><span class="fm">Eₙ = −13.6Z²/n² eV</span><span class="fn">Energy of nth orbit — negative = bound state</span></div>
-    <div class="frow"><span class="fm">ΔE = hf = E₂ − E₁</span><span class="fn">Photon emitted when electron drops levels</span></div>
+    <div class="frow"><span class="fm">rₙ = 0.529n²/Z Å</span><span class="fn">Orbital radius. Doubles concept: if n doubles, r quadruples (n² dependence)</span></div>
+    <div class="frow"><span class="fm">Eₙ = −13.6Z²/n² eV</span><span class="fn">Ground state (n=1) of H: −13.6 eV. Energy increases (less negative) as n increases.</span></div>
+    <div class="frow"><span class="fm">ΔE = E_higher − E_lower = hf</span><span class="fn">Photon emitted when electron drops from higher to lower orbit</span></div>
     <div class="slbl">Nuclear physics</div>
-    <div class="frow"><span class="fm">N = N₀(1/2)^(t/T½)</span><span class="fn">Radioactive decay; T½ = half-life</span></div>
-    <div class="frow"><span class="fm">N = N₀e^(−λt)</span><span class="fn">λ = 0.693/T½ (decay constant)</span></div>
-    <div class="frow"><span class="fm">Binding Energy = Δm × 931.5 MeV</span><span class="fn">Δm = mass defect in amu</span></div>
-    <div class="tip tp">Half-life and Bohr's energy level questions appear every year. Master these two types first.</div>
+    <div class="frow"><span class="fm">N = N₀(1/2)^(t/T½)</span><span class="fn">Radioactive decay. After n half-lives: N = N₀/2ⁿ</span></div>
+    <div class="frow"><span class="fm">λ = 0.693/T½ · N = N₀e^(−λt)</span><span class="fn">λ = decay constant. Activity A = λN</span></div>
+    <div class="frow"><span class="fm">Binding Energy = Δm × 931.5 MeV</span><span class="fn">Δm = mass defect in amu. Higher BE/nucleon = more stable nucleus.</span></div>
+    <div class="mcq">
+      <div class="mcq-label">Practice MCQ</div>
+      <div class="mcq-q">A radioactive substance has half-life 10 days. After 30 days, fraction remaining is:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt" onclick="pickOpt(this,false)">A) 1/2</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">B) 1/4</div>
+        <div class="mcq-opt" onclick="pickOpt(this,true)">C) 1/8</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">D) 1/16</div>
+      </div>
+      <div class="mcq-hint">Number of half-lives = 30/10 = 3. Remaining = (1/2)³ = <strong>1/8</strong>. Every half-life halves the amount — do it 3 times.</div>
+    </div>
+    <div class="trap"><div class="trap-label">Common Traps</div><ul><li>Bohr energy levels: higher orbit = higher (less negative) energy, not lower. E₁<E₂<E₃.</li><li>Photoelectric effect: intensity doesn't affect KE_max — only frequency does. AEEE loves testing this conceptual point.</li><li>Half-life: the answer is fraction remaining, not fraction decayed. 1/8 remaining = 7/8 decayed.</li></ul></div>
   </div>
 </div>
 
-<!-- OPTICS -->
-<div class="card open">
+<div class="card" data-id="p2" data-subj="p">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Optics — Ray & Wave Optics</span>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Electrostatics & Current Electricity</span></div>
     <div class="cmeta"><span class="badge bp">3–4 Qs</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
-    <div class="slbl">Ray optics</div>
-    <div class="frow"><span class="fm">1/v − 1/u = 1/f (mirror)</span><span class="fn">Mirror formula; sign convention: distances from pole</span></div>
-    <div class="frow"><span class="fm">1/v − 1/u = 1/f (lens)</span><span class="fn">Same form for thin lens</span></div>
-    <div class="frow"><span class="fm">m = −v/u (mirror), m = v/u (lens)</span><span class="fn">Magnification; m>0 virtual, m<0 real image</span></div>
-    <div class="frow"><span class="fm">n = sinᵢ / sinr (Snell's law)</span><span class="fn">Refraction at interface</span></div>
-    <div class="frow"><span class="fm">sinC = 1/n (critical angle)</span><span class="fn">Total internal reflection condition</span></div>
-    <div class="frow"><span class="fm">P = 1/f (metres) → Dioptre</span><span class="fn">Power of lens; lenses in contact: P = P₁+P₂</span></div>
-    <div class="slbl">Wave optics (Young's double slit)</div>
-    <div class="frow"><span class="fm">β = λD / d</span><span class="fn">Fringe width; D = screen distance, d = slit separation</span></div>
-    <div class="frow"><span class="fm">Path diff for bright = nλ</span><span class="fn">Constructive interference condition</span></div>
-    <div class="frow"><span class="fm">Path diff for dark = (2n−1)λ/2</span><span class="fn">Destructive interference condition</span></div>
-  </div>
-</div>
-
-<!-- EMI & AC -->
-<div class="card open">
-  <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Electromagnetic Induction & AC Circuits</span>
-    <div class="cmeta"><span class="badge bp">3–4 Qs</span><span class="chev">▼</span></div>
-  </div>
-  <div class="cbody">
-    <div class="slbl">EMI</div>
-    <div class="frow"><span class="fm">EMF = −dΦ/dt</span><span class="fn">Faraday's law; Φ = BAcosθ (magnetic flux)</span></div>
-    <div class="frow"><span class="fm">EMF = Blv</span><span class="fn">Motional EMF; conductor of length l, speed v</span></div>
-    <div class="slbl">AC circuits</div>
-    <div class="frow"><span class="fm">I_rms = I₀/√2, V_rms = V₀/√2</span><span class="fn">RMS values — most tested direct question</span></div>
-    <div class="frow"><span class="fm">X_L = ωL = 2πfL</span><span class="fn">Inductive reactance</span></div>
-    <div class="frow"><span class="fm">X_C = 1/ωC = 1/2πfC</span><span class="fn">Capacitive reactance</span></div>
-    <div class="frow"><span class="fm">Z = √(R² + (X_L − X_C)²)</span><span class="fn">Impedance of LCR series circuit</span></div>
-    <div class="frow"><span class="fm">Resonance: X_L=X_C → f₀=1/2π√(LC)</span><span class="fn">At resonance Z = R (minimum impedance)</span></div>
-    <div class="frow"><span class="fm">Power factor = cosφ = R/Z</span><span class="fn">φ = phase angle between V and I</span></div>
-  </div>
-</div>
-
-<!-- ELECTROSTATICS & CURRENT -->
-<div class="card open">
-  <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Current Electricity & Electrostatics</span>
-    <div class="cmeta"><span class="badge bp">3–4 Qs</span><span class="chev">▼</span></div>
-  </div>
-  <div class="cbody">
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-p"></div><div class="pdot lit-p"></div><div class="pdot lit-p"></div><div class="pdot lit-p"></div><div class="pdot lit-p"></div></div><span class="prio-text">5/5 — Circuits appear every single year.</span></div>
     <div class="slbl">Electrostatics</div>
-    <div class="frow"><span class="fm">F = kq₁q₂ / r²</span><span class="fn">Coulomb's law; k = 9×10⁹ N·m²/C²</span></div>
-    <div class="frow"><span class="fm">E = kq / r²</span><span class="fn">Electric field due to point charge</span></div>
-    <div class="frow"><span class="fm">V = kq / r</span><span class="fn">Electric potential; V = Work/charge</span></div>
-    <div class="frow"><span class="fm">C = Q/V, C_parallel = C₁+C₂</span><span class="fn">Capacitance; series: 1/C = 1/C₁+1/C₂</span></div>
-    <div class="frow"><span class="fm">Energy = ½CV² = ½QV = Q²/2C</span><span class="fn">Energy stored in capacitor</span></div>
+    <div class="frow"><span class="fm">F = kq₁q₂/r² · k=9×10⁹ N·m²/C²</span><span class="fn">Coulomb's law. F ∝ 1/r² — halve distance = 4× force</span></div>
+    <div class="frow"><span class="fm">E = kq/r² · V = kq/r</span><span class="fn">E = field (vector), V = potential (scalar). E = −dV/dr</span></div>
+    <div class="frow"><span class="fm">C = Q/V · Energy = ½CV² = Q²/2C</span><span class="fn">Series: 1/C=Σ(1/Cᵢ). Parallel: C=ΣCᵢ. Opposite to resistors!</span></div>
     <div class="slbl">Current electricity</div>
-    <div class="frow"><span class="fm">V = IR (Ohm's law)</span><span class="fn">Applies when R is constant (ohmic conductor)</span></div>
-    <div class="frow"><span class="fm">R_series = R₁+R₂; 1/R_par = 1/R₁+1/R₂</span><span class="fn">Resistor combinations</span></div>
-    <div class="frow"><span class="fm">KCL: ΣI_in = ΣI_out</span><span class="fn">Current at a junction</span></div>
-    <div class="frow"><span class="fm">KVL: ΣV = 0 (closed loop)</span><span class="fn">Voltage around any closed loop = 0</span></div>
-    <div class="frow"><span class="fm">Wheatstone: P/Q = R/S (balanced)</span><span class="fn">No current through galvanometer when balanced</span></div>
+    <div class="frow"><span class="fm">V=IR · R_s=R₁+R₂ · 1/R_p=1/R₁+1/R₂</span><span class="fn">Ohm's law. P=VI=I²R=V²/R (power formulas)</span></div>
+    <div class="frow"><span class="fm">KCL: ΣI_in=ΣI_out (junction)</span><span class="fn">KVL: ΣV=0 around any closed loop (sign: +ve if traversed with current)</span></div>
+    <div class="frow"><span class="fm">Wheatstone bridge: P/Q=R/S (balanced)</span><span class="fn">When balanced: no current through galvanometer. Cross-multiply to check.</span></div>
+    <div class="mcq">
+      <div class="mcq-label">Practice MCQ</div>
+      <div class="mcq-q">Two capacitors 4μF and 6μF are connected in series. Equivalent capacitance is:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt" onclick="pickOpt(this,false)">A) 10 μF</div>
+        <div class="mcq-opt" onclick="pickOpt(this,true)">B) 2.4 μF</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">C) 5 μF</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">D) 1.2 μF</div>
+      </div>
+      <div class="mcq-hint">Series: 1/C = 1/4 + 1/6 = 3/12 + 2/12 = 5/12. C = <strong>12/5 = 2.4 μF</strong>. Remember: capacitors in series combine like resistors in parallel.</div>
+    </div>
+    <div class="trap"><div class="trap-label">Common Traps</div><ul><li>Capacitors in SERIES → smaller equivalent (like resistors in parallel). This is the opposite of resistors — extremely common trap.</li><li>KVL sign convention: when traversing in direction of current through resistor, voltage drops (−IR). Against current: +IR.</li></ul></div>
+    <div class="mnem"><div class="mnem-label">Memory Anchor</div><p>Capacitors vs Resistors: <strong>C</strong>apacitors — <strong>S</strong>eries is smaller, <strong>P</strong>arallel is bigger. <strong>R</strong>esistors — exact <strong>o</strong>pposite. C-S-P vs R-P-S.</p></div>
   </div>
 </div>
 
-<!-- LAWS OF MOTION & THERMO -->
-<div class="card open">
+<div class="card" data-id="p3" data-subj="p">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Laws of Motion, Work-Energy & Thermodynamics</span>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Electromagnetic Induction & AC Circuits</span></div>
+    <div class="cmeta"><span class="badge bp">3–4 Qs</span><span class="chev">▼</span></div>
+  </div>
+  <div class="cbody">
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-p"></div><div class="pdot lit-p"></div><div class="pdot lit-p"></div><div class="pdot lit-p"></div><div class="pdot"></div></div><span class="prio-text">4/5 — LCR resonance + RMS values appear every paper.</span></div>
+    <div class="frow"><span class="fm">EMF = −dΦ/dt · Φ = BAcosθ</span><span class="fn">Faraday's law. Negative sign = Lenz's law (induced EMF opposes change).</span></div>
+    <div class="frow"><span class="fm">Motional EMF = Blv</span><span class="fn">Conductor of length l moving at speed v ⊥ to field B</span></div>
+    <div class="frow"><span class="fm">I_rms=I₀/√2 · V_rms=V₀/√2</span><span class="fn">RMS = peak/√2. Average power P = V_rms·I_rms·cosφ</span></div>
+    <div class="frow"><span class="fm">X_L=2πfL · X_C=1/2πfC</span><span class="fn">Reactance. Z=√(R²+(X_L−X_C)²). Resonance: f₀=1/2π√(LC)</span></div>
+    <div class="frow"><span class="fm">Power factor = cosφ = R/Z</span><span class="fn">At resonance: Z=R, cosφ=1, power is maximum</span></div>
+    <div class="trap"><div class="trap-label">Common Traps</div><ul><li>RMS ≠ Average. V_rms = V₀/√2 ≈ 0.707V₀. Average = 2V₀/π ≈ 0.637V₀. Very different!</li><li>At resonance: Z is MINIMUM (=R), current is MAXIMUM. Not the other way around.</li></ul></div>
+    <div class="mcq">
+      <div class="mcq-label">Practice MCQ</div>
+      <div class="mcq-q">In an LCR circuit at resonance, impedance is equal to:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt" onclick="pickOpt(this,false)">A) X_L</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">B) X_C</div>
+        <div class="mcq-opt" onclick="pickOpt(this,true)">C) R</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">D) 0</div>
+      </div>
+      <div class="mcq-hint">At resonance X_L = X_C, so they cancel. Z = √(R² + 0²) = <strong>R</strong>. Impedance equals pure resistance at resonance.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-id="p4" data-subj="p">
+  <div class="chdr" onclick="tog(this)">
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Laws of Motion, Work-Energy & Thermodynamics</span></div>
     <div class="cmeta"><span class="badge bp">4 Qs</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
-    <div class="slbl">Laws of motion</div>
-    <div class="frow"><span class="fm">F = ma</span><span class="fn">Newton's 2nd law</span></div>
-    <div class="frow"><span class="fm">Impulse = FΔt = Δp</span><span class="fn">Change in momentum</span></div>
-    <div class="frow"><span class="fm">f = μN</span><span class="fn">Friction force; μ = coefficient of friction</span></div>
-    <div class="slbl">Work, energy, momentum</div>
-    <div class="frow"><span class="fm">W = Fs cosθ</span><span class="fn">Work done by force F at angle θ</span></div>
-    <div class="frow"><span class="fm">KE = ½mv², PE = mgh</span><span class="fn">Kinetic and potential energy</span></div>
-    <div class="frow"><span class="fm">KE₁+PE₁ = KE₂+PE₂</span><span class="fn">Energy conservation when no external forces act</span></div>
-    <div class="frow"><span class="fm">p = mv; m₁v₁ = m₂v₂</span><span class="fn">Momentum conservation in collisions</span></div>
-    <div class="slbl">Thermodynamics</div>
-    <div class="frow"><span class="fm">ΔU = Q − W (1st law)</span><span class="fn">Internal energy = heat in − work done by gas</span></div>
-    <div class="frow"><span class="fm">η = 1 − T₂/T₁ (Carnot)</span><span class="fn">Maximum efficiency; T in Kelvin</span></div>
-    <div class="frow"><span class="fm">PV = nRT (ideal gas)</span><span class="fn">R = 8.314 J/mol·K</span></div>
-    <div class="frow"><span class="fm">v_rms = √(3RT/M)</span><span class="fn">RMS speed of gas molecules; M = molar mass</span></div>
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-p"></div><div class="pdot lit-p"></div><div class="pdot lit-p"></div><div class="pdot lit-p"></div><div class="pdot"></div></div><span class="prio-text">4/5 — Foundational. Most questions are straightforward substitution.</span></div>
+    <div class="frow"><span class="fm">F=ma · Impulse=FΔt=Δp · f=μN</span><span class="fn">Newton's 2nd law. Impulse=change in momentum. Friction force.</span></div>
+    <div class="frow"><span class="fm">W=Fs cosθ · KE=½mv² · PE=mgh</span><span class="fn">Work-energy theorem: W_net = ΔKE = KE_final − KE_initial</span></div>
+    <div class="frow"><span class="fm">p=mv · m₁v₁+m₂v₂=const (no ext force)</span><span class="fn">Momentum conservation. In elastic collision: KE also conserved.</span></div>
+    <div class="frow"><span class="fm">ΔU=Q−W · η=1−T₂/T₁ (Carnot)</span><span class="fn">1st law of thermo. Carnot efficiency is maximum possible. T in Kelvin.</span></div>
+    <div class="frow"><span class="fm">PV=nRT · v_rms=√(3RT/M)</span><span class="fn">Ideal gas. R=8.314 J/mol·K. M = molar mass in kg/mol for SI.</span></div>
+    <div class="trap"><div class="trap-label">Common Traps</div><ul><li>Work = Fs cosθ — if force and displacement are perpendicular, W = 0 (e.g. normal force doing no work).</li><li>Carnot efficiency uses absolute temperature (Kelvin). Celsius = instant wrong answer.</li></ul></div>
   </div>
 </div>
 
-<!-- ROTATIONAL MOTION — NEW -->
-<div class="card">
+<div class="card" data-id="p5" data-subj="p">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Rotational Motion & Centre of Mass</span>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Optics — Ray & Wave Optics</span></div>
+    <div class="cmeta"><span class="badge bp">3–4 Qs</span><span class="chev">▼</span></div>
+  </div>
+  <div class="cbody">
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-p"></div><div class="pdot lit-p"></div><div class="pdot lit-p"></div><div class="pdot lit-p"></div><div class="pdot"></div></div><span class="prio-text">4/5 — Mirror/lens formula + YDSE appear every year.</span></div>
+    <div class="frow"><span class="fm">1/v − 1/u = 1/f (mirror & lens)</span><span class="fn">Sign convention: distances measured from pole/optical centre. Distances in direction of light = positive.</span></div>
+    <div class="frow"><span class="fm">m = −v/u (mirror) · m = v/u (lens)</span><span class="fn">|m|>1: magnified. |m|<1: diminished. m>0: virtual/erect. m<0: real/inverted.</span></div>
+    <div class="frow"><span class="fm">Snell's law: n₁sinᵢ=n₂sinr · sinC=1/n</span><span class="fn">Critical angle C: total internal reflection when i>C (light in denser medium)</span></div>
+    <div class="frow"><span class="fm">P=1/f(m) Dioptres · P_total=P₁+P₂</span><span class="fn">Power of lenses. Concave lens has negative power. Convex = positive.</span></div>
+    <div class="frow"><span class="fm">YDSE: β=λD/d · bright: Δ=nλ · dark: Δ=(2n−1)λ/2</span><span class="fn">β = fringe width. D = screen distance, d = slit separation</span></div>
+    <div class="trap"><div class="trap-label">Common Traps</div><ul><li>Mirror formula: 1/v − 1/u = 1/f (note the minus sign between 1/v and 1/u — not plus!). Lens formula: 1/v − 1/u = 1/f also (same form).</li><li>For concave mirror: f is negative. For convex: f is positive. Get sign convention right first.</li></ul></div>
+  </div>
+</div>
+
+<div class="card" data-id="p6" data-subj="p">
+  <div class="chdr" onclick="tog(this)">
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Rotational Motion & Centre of Mass</span></div>
     <div class="cmeta"><span class="badge bp">3–4 Qs</span><span class="badge bnew">NEW</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
-    <div class="slbl">Rotational kinematics</div>
-    <div class="frow"><span class="fm">ω = ω₀ + αt</span><span class="fn">Angular velocity; α = angular acceleration (rad/s²)</span></div>
-    <div class="frow"><span class="fm">θ = ω₀t + ½αt²</span><span class="fn">Angular displacement</span></div>
-    <div class="frow"><span class="fm">ω² = ω₀² + 2αθ</span><span class="fn">Exact rotational analogs of v=u+at, s=ut+½at², v²=u²+2as</span></div>
-    <div class="slbl">Torque & moment of inertia</div>
-    <div class="frow"><span class="fm">τ = r × F = I·α</span><span class="fn">Torque; I = moment of inertia (rotational analog of mass)</span></div>
-    <div class="frow"><span class="fm">L = Iω (angular momentum)</span><span class="fn">Conserved when no external torque acts</span></div>
-    <div class="frow"><span class="fm">KE_rot = ½Iω²</span><span class="fn">Rotational kinetic energy</span></div>
-    <div class="slbl">Standard moments of inertia</div>
-    <div class="frow"><span class="fm">Solid sphere: I = (2/5)MR²</span><span class="fn">About diameter axis</span></div>
-    <div class="frow"><span class="fm">Hollow sphere: I = (2/3)MR²</span><span class="fn">About diameter axis</span></div>
-    <div class="frow"><span class="fm">Solid disc: I = (1/2)MR²</span><span class="fn">About central axis (perpendicular to disc)</span></div>
-    <div class="frow"><span class="fm">Rod (centre): I = ML²/12</span><span class="fn">Thin rod about centre; about end = ML²/3</span></div>
-    <div class="frow"><span class="fm">Parallel axis: I = I_cm + Md²</span><span class="fn">d = distance between parallel axes</span></div>
-    <div class="tip tp">Rolling (no slipping): v = Rω. Total KE = ½mv² + ½Iω². This combined formula appears directly in AEEE questions.</div>
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-p"></div><div class="pdot lit-p"></div><div class="pdot lit-p"></div><div class="pdot lit-p"></div><div class="pdot"></div></div><span class="prio-text">4/5 — MOI table is direct recall. 3-4 guaranteed marks.</span></div>
+    <div class="frow"><span class="fm">ω=ω₀+αt · θ=ω₀t+½αt² · ω²=ω₀²+2αθ</span><span class="fn">Rotational analogs of v=u+at, s=ut+½at², v²=u²+2as</span></div>
+    <div class="frow"><span class="fm">τ=Iα · L=Iω · KE_rot=½Iω²</span><span class="fn">τ = torque. L = angular momentum (conserved if no external torque)</span></div>
+    <div class="frow"><span class="fm">Solid sphere: 2MR²/5 · Hollow: 2MR²/3</span><span class="fn">Disc: MR²/2 · Ring: MR² · Rod(centre): ML²/12</span></div>
+    <div class="frow"><span class="fm">Parallel axis: I=I_cm+Md²</span><span class="fn">d = distance between axes. Perpendicular axis (lamina): Iz=Ix+Iy</span></div>
+    <div class="frow"><span class="fm">Rolling: v=Rω · Total KE=½mv²+½Iω²</span><span class="fn">For solid sphere rolling: KE = ½mv²(1 + 2/5) = 7mv²/10</span></div>
+    <div class="mnem"><div class="mnem-label">Memory Anchor — MOI Table</div><p>Solid S-phere: <strong>2/5</strong> · Hollow S-phere: <strong>2/3</strong> · Disc: <strong>1/2</strong> · Ring: <strong>1</strong> · Rod(end): <strong>1/3</strong> · Rod(centre): <strong>1/12</strong>. Pattern: fractions decrease as mass distributes away from axis.</p></div>
+    <div class="trap"><div class="trap-label">Common Traps</div><ul><li>Solid sphere 2/5 vs hollow sphere 2/3 — these get swapped constantly. Hollow (mass farther from axis) = higher I = 2/3.</li><li>Rolling down incline: use energy conservation, not just F=ma. Total KE includes both translational and rotational.</li></ul></div>
   </div>
 </div>
 
-<!-- GRAVITATION — NEW -->
-<div class="card">
+<div class="card" data-id="p7" data-subj="p">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Gravitation</span>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Gravitation</span></div>
     <div class="cmeta"><span class="badge bp">2–3 Qs</span><span class="badge bnew">NEW</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
-    <div class="frow"><span class="fm">F = Gm₁m₂ / r²</span><span class="fn">Newton's law; G = 6.67×10⁻¹¹ N·m²/kg²</span></div>
-    <div class="frow"><span class="fm">g = GM/R²</span><span class="fn">Surface gravity; M = earth mass, R = earth radius</span></div>
-    <div class="frow"><span class="fm">g_h = g(1 − 2h/R)</span><span class="fn">Approximate at height h (valid when h << R)</span></div>
-    <div class="frow"><span class="fm">g_d = g(1 − d/R)</span><span class="fn">g decreases linearly with depth below surface</span></div>
-    <div class="frow"><span class="fm">Orbital speed: v₀ = √(GM/r)</span><span class="fn">r = orbital radius from Earth's centre</span></div>
-    <div class="frow"><span class="fm">Escape speed: vₑ = √(2GM/R) = √(2gR)</span><span class="fn">vₑ = √2 × v₀ at surface</span></div>
-    <div class="frow"><span class="fm">T² ∝ r³ (Kepler's 3rd law)</span><span class="fn">T = 2π√(r³/GM) — if r doubles, T increases by 2√2</span></div>
-    <div class="frow"><span class="fm">PE = −GMm/r, Total E = −GMm/2r</span><span class="fn">Total orbital energy always negative (bound orbit)</span></div>
-    <div class="tip tp">Kepler's 3rd law (T²∝r³) is tested every year. Practice: if r doubles → T multiplies by 2√2 ≈ 2.83.</div>
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-p"></div><div class="pdot lit-p"></div><div class="pdot lit-p"></div><div class="pdot lit-p"></div><div class="pdot"></div></div><span class="prio-text">4/5 — Kepler's 3rd law asked directly every year.</span></div>
+    <div class="frow"><span class="fm">F=Gm₁m₂/r² · G=6.67×10⁻¹¹</span><span class="fn">Force ∝ 1/r². Double distance → force becomes 1/4.</span></div>
+    <div class="frow"><span class="fm">g=GM/R² · g_h≈g(1−2h/R) · g_d=g(1−d/R)</span><span class="fn">g decreases above (quadratic) and below (linear) surface</span></div>
+    <div class="frow"><span class="fm">v₀=√(GM/r) · vₑ=√(2gR)=√2·v₀</span><span class="fn">Orbital speed. Escape speed = √2 × orbital speed (at surface)</span></div>
+    <div class="frow"><span class="fm">T²∝r³ (Kepler 3rd) · T=2π√(r³/GM)</span><span class="fn">If r doubles: T → T×2^(3/2) = T×2√2 ≈ 2.83T</span></div>
+    <div class="frow"><span class="fm">Total orbital E = −GMm/2r (always negative)</span><span class="fn">PE = −GMm/r · KE = +GMm/2r. KE = −½(Total E)</span></div>
+    <div class="mcq">
+      <div class="mcq-label">Practice MCQ</div>
+      <div class="mcq-q">If the orbital radius of a satellite is increased 4 times, its time period becomes:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt" onclick="pickOpt(this,false)">A) 4 times</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">B) 2 times</div>
+        <div class="mcq-opt" onclick="pickOpt(this,true)">C) 8 times</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">D) 16 times</div>
+      </div>
+      <div class="mcq-hint">T²∝r³. If r→4r: T²→(4r)³=64r³. New T² = 64×old T². New T = 8×old T. Answer: <strong>8 times</strong>.</div>
+    </div>
+    <div class="trap"><div class="trap-label">Common Traps</div><ul><li>g at height: approximate formula g(1−2h/R) only valid for h<<R. For exact: use g=GM/(R+h)².</li><li>Escape velocity doesn't depend on mass of the escaping object. Only on M and R of planet.</li></ul></div>
   </div>
 </div>
 
-<!-- FLUID MECHANICS — NEW -->
-<div class="card">
+<div class="card" data-id="p8" data-subj="p">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Fluid Mechanics & Surface Tension</span>
-    <div class="cmeta"><span class="badge bp">2 Qs</span><span class="badge bnew">NEW</span><span class="chev">▼</span></div>
-  </div>
-  <div class="cbody">
-    <div class="frow"><span class="fm">P = ρgh</span><span class="fn">Hydrostatic pressure at depth h in fluid density ρ</span></div>
-    <div class="frow"><span class="fm">Buoyant force = ρ_fluid × V_sub × g</span><span class="fn">Archimedes; object floats when B = Weight</span></div>
-    <div class="frow"><span class="fm">Continuity: A₁v₁ = A₂v₂</span><span class="fn">For incompressible fluid (conservation of mass)</span></div>
-    <div class="frow"><span class="fm">Bernoulli: P + ½ρv² + ρgh = const</span><span class="fn">Energy conservation for ideal fluid flow</span></div>
-    <div class="frow"><span class="fm">Terminal velocity: v_t = 2r²(ρ−σ)g/9η</span><span class="fn">ρ = sphere density, σ = fluid density, η = viscosity</span></div>
-    <div class="frow"><span class="fm">Excess pressure in soap bubble: 4T/r</span><span class="fn">Two surfaces; liquid drop (one surface): 2T/r</span></div>
-    <div class="tip tp">AEEE tests: (1) floating condition — density ratio, (2) Bernoulli — higher velocity = lower pressure (venturimeter), (3) terminal velocity formula.</div>
-  </div>
-</div>
-
-<!-- SHM & WAVES — NEW -->
-<div class="card">
-  <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Simple Harmonic Motion (SHM) & Waves</span>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">SHM, Waves & Fluid Mechanics</span></div>
     <div class="cmeta"><span class="badge bp">3 Qs</span><span class="badge bnew">NEW</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
-    <div class="slbl">SHM fundamentals</div>
-    <div class="frow"><span class="fm">x = A sin(ωt + φ)</span><span class="fn">Displacement; A = amplitude, ω = 2π/T = 2πf</span></div>
-    <div class="frow"><span class="fm">v = ω√(A²−x²)</span><span class="fn">Velocity at displacement x (max at x=0)</span></div>
-    <div class="frow"><span class="fm">a = −ω²x</span><span class="fn">Acceleration (max at x=±A, zero at x=0)</span></div>
-    <div class="frow"><span class="fm">T_spring = 2π√(m/k)</span><span class="fn">k = spring constant</span></div>
-    <div class="frow"><span class="fm">T_pendulum = 2π√(L/g)</span><span class="fn">Independent of mass and amplitude (small angles)</span></div>
-    <div class="frow"><span class="fm">Total E = ½mω²A² = ½kA²</span><span class="fn">Energy ∝ A² — memorize this fact</span></div>
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-p"></div><div class="pdot lit-p"></div><div class="pdot lit-p"></div><div class="pdot lit-p"></div><div class="pdot"></div></div><span class="prio-text">4/5 — Time period formula + Bernoulli = easy 3 marks.</span></div>
+    <div class="slbl">SHM</div>
+    <div class="frow"><span class="fm">x=Asin(ωt+φ) · v=ω√(A²−x²)</span><span class="fn">a=−ω²x (acceleration always directed toward mean position)</span></div>
+    <div class="frow"><span class="fm">T_spring=2π√(m/k) · T_pendulum=2π√(L/g)</span><span class="fn">Pendulum independent of mass, amplitude. Spring independent of g.</span></div>
+    <div class="frow"><span class="fm">E_total=½kA²=½mω²A²</span><span class="fn">Energy ∝ A². Double amplitude → 4× energy.</span></div>
     <div class="slbl">Waves</div>
-    <div class="frow"><span class="fm">v = fλ</span><span class="fn">Wave speed; f = frequency (Hz), λ = wavelength (m)</span></div>
-    <div class="frow"><span class="fm">Speed of sound: v = √(γRT/M)</span><span class="fn">Increases with temperature; γ = 1.4 for diatomic</span></div>
-    <div class="frow"><span class="fm">Beats frequency = |f₁ − f₂|</span><span class="fn">Loud-soft cycles per second</span></div>
-    <div class="frow"><span class="fm">Doppler: f' = f(v ± v_obs)/(v ∓ v_src)</span><span class="fn">+ numerator / − denominator for approaching; reverse for receding</span></div>
-    <div class="tip tp">SHM questions: either (1) find velocity/acceleration at given x, or (2) time period of spring/pendulum. Master these two types.</div>
+    <div class="frow"><span class="fm">v=fλ · Beats=|f₁−f₂|</span><span class="fn">Sound speed in gas: v=√(γRT/M). Increases with T.</span></div>
+    <div class="frow"><span class="fm">Doppler: f'=f(v±v_obs)/(v∓v_src)</span><span class="fn">Both approaching → + numerator, − denominator. Receding: reverse.</span></div>
+    <div class="slbl">Fluid mechanics</div>
+    <div class="frow"><span class="fm">P=ρgh · Buoyancy=ρ_fluid·V_sub·g</span><span class="fn">Object floats when buoyancy = weight → ρ_obj/ρ_fluid = V_sub/V_total</span></div>
+    <div class="frow"><span class="fm">Bernoulli: P+½ρv²+ρgh=const</span><span class="fn">Higher velocity → lower pressure. Used in venturimeter, aerofoil lift.</span></div>
+    <div class="frow"><span class="fm">Terminal v_t=2r²(ρ−σ)g/9η</span><span class="fn">Stokes' law for sphere. Proportional to r².</span></div>
+    <div class="trap"><div class="trap-label">Common Traps</div><ul><li>SHM acceleration: a = −ω²x. Negative sign means directed toward centre, not that it's numerically negative.</li><li>Soap bubble: excess pressure = 4T/r (TWO surfaces). Liquid drop = 2T/r (ONE surface). Don't confuse.</li></ul></div>
   </div>
 </div>
 
-<!-- MAGNETIC EFFECTS — NEW -->
-<div class="card">
+<div class="card" data-id="p9" data-subj="p">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Magnetic Effects of Current</span>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Magnetic Effects of Current</span></div>
     <div class="cmeta"><span class="badge bp">2–3 Qs</span><span class="badge bnew">NEW</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
-    <div class="frow"><span class="fm">F = qvBsinθ</span><span class="fn">Lorentz force on moving charge in magnetic field B</span></div>
-    <div class="frow"><span class="fm">r = mv / qB</span><span class="fn">Radius of circular path of charged particle in B field</span></div>
-    <div class="frow"><span class="fm">F = BIL sinθ</span><span class="fn">Force on current-carrying conductor of length L</span></div>
-    <div class="frow"><span class="fm">B = μ₀I / 2πr (long wire)</span><span class="fn">Field at distance r from long straight wire</span></div>
-    <div class="frow"><span class="fm">B = μ₀nI (solenoid)</span><span class="fn">n = turns per unit length; uniform field inside</span></div>
-    <div class="frow"><span class="fm">Torque: τ = BINA sinθ</span><span class="fn">N = turns, A = area; max torque at θ=90°</span></div>
-    <div class="tip tp">Fleming's Left Hand Rule: forefinger = B, middle finger = current, thumb = force (FBI). AEEE tests direction questions directly — know this rule.</div>
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-p"></div><div class="pdot lit-p"></div><div class="pdot lit-p"></div><div class="pdot"></div><div class="pdot"></div></div><span class="prio-text">3/5 — Direction questions (Fleming's rule) appear often.</span></div>
+    <div class="frow"><span class="fm">F=qvBsinθ · r=mv/qB</span><span class="fn">Lorentz force. Circular path radius proportional to momentum (mv).</span></div>
+    <div class="frow"><span class="fm">F=BILsinθ · B_wire=μ₀I/2πr</span><span class="fn">Force on current wire. Field around long straight wire.</span></div>
+    <div class="frow"><span class="fm">B_solenoid=μ₀nI · τ=BINAsinθ</span><span class="fn">n = turns/length. Torque on coil (moving coil galvanometer principle)</span></div>
+    <div class="mnem"><div class="mnem-label">Fleming's Rules</div><p><strong>Left hand</strong> (motor — F on conductor): F(thumb) = B(forefinger) × I(middle finger). <strong>Right hand</strong> (generator — EMF): same layout for induced current direction.</p></div>
+    <div class="trap"><div class="trap-label">Common Traps</div><ul><li>Left hand rule for FORCE on conductor. Right hand rule for INDUCED current direction. Using wrong hand = wrong answer.</li><li>Magnetic force on a stationary charge = 0 (F=qvBsinθ; if v=0, F=0).</li></ul></div>
   </div>
 </div>
 
-<!-- SEMICONDUCTORS — NEW -->
-<div class="card">
+<div class="card" data-id="p10" data-subj="p">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Semiconductors, Logic Gates & Communication</span>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Semiconductors, Logic Gates & Communication</span></div>
     <div class="cmeta"><span class="badge bp">2–3 Qs</span><span class="badge bnew">NEW</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
-    <div class="slbl">Semiconductor basics</div>
-    <div class="crow"><p>Intrinsic semiconductor: pure Ge/Si — electrons = holes at any temperature</p></div>
-    <div class="crow"><p>N-type: doped with pentavalent (P, As) — excess electrons (majority carriers)</p></div>
-    <div class="crow"><p>P-type: doped with trivalent (B, Al) — excess holes (majority carriers)</p></div>
-    <div class="crow"><p>Forward bias: p-side to +ve terminal; current flows; barrier decreases</p></div>
-    <div class="crow"><p>Reverse bias: p-side to −ve terminal; only tiny leakage current; barrier increases</p></div>
-    <div class="slbl">Logic gates (memorize all 5)</div>
-    <div class="frow"><span class="fm">AND: Y = A·B</span><span class="fn">Output 1 only when BOTH inputs are 1</span></div>
-    <div class="frow"><span class="fm">OR: Y = A+B</span><span class="fn">Output 1 when AT LEAST ONE input is 1</span></div>
-    <div class="frow"><span class="fm">NOT: Y = Ā</span><span class="fn">Output is opposite of input</span></div>
-    <div class="frow"><span class="fm">NAND: Y = (A·B)̄ = Ā+B̄</span><span class="fn">AND + NOT; universal gate — can make any other gate</span></div>
-    <div class="frow"><span class="fm">NOR: Y = (A+B)̄ = Ā·B̄</span><span class="fn">OR + NOT; also universal gate</span></div>
-    <div class="slbl">Communication systems</div>
-    <div class="frow"><span class="fm">Modulation index μ = Am/Ac</span><span class="fn">Am = message amplitude, Ac = carrier; μ ≤ 1 for no distortion</span></div>
-    <div class="frow"><span class="fm">Bandwidth of AM = 2fm</span><span class="fn">fm = highest message frequency</span></div>
-    <div class="frow"><span class="fm">Range: d = √(2Rh)</span><span class="fn">Max line-of-sight; R = Earth radius, h = antenna height</span></div>
-    <div class="tip tp">Draw the truth table for each gate on paper once — you'll remember permanently. Logic gates appear every single year in AEEE.</div>
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-p"></div><div class="pdot lit-p"></div><div class="pdot lit-p"></div><div class="pdot lit-p"></div><div class="pdot"></div></div><span class="prio-text">4/5 — Logic gates tested in 90% of AEEE papers. Free marks.</span></div>
+    <div class="crow"><p>N-type: pentavalent dopant (P,As,Sb) → excess electrons. P-type: trivalent (B,Al,In) → excess holes.</p></div>
+    <div class="crow"><p>Forward bias: p→+ve terminal. Current flows. Junction barrier shrinks.</p></div>
+    <div class="crow"><p>Reverse bias: p→−ve terminal. Only leakage current. Junction barrier grows.</p></div>
+    <div class="slbl">Logic gates — truth table patterns</div>
+    <div class="frow"><span class="fm">AND: Y=A·B · Output 1 only when A=1 AND B=1</span><span class="fn">Think: both switches must be ON</span></div>
+    <div class="frow"><span class="fm">OR: Y=A+B · Output 0 only when A=0 AND B=0</span><span class="fn">Think: either switch ON is enough</span></div>
+    <div class="frow"><span class="fm">NOT: Y=Ā · NAND=(A·B)̄ · NOR=(A+B)̄</span><span class="fn">NAND and NOR are universal gates — any other gate can be made from them alone</span></div>
+    <div class="frow"><span class="fm">XOR: Y=A⊕B=AḂ+ĀB</span><span class="fn">Output 1 when inputs are DIFFERENT. "Exclusive or"</span></div>
+    <div class="frow"><span class="fm">Bandwidth AM=2fm · Range d=√(2Rh)</span><span class="fn">μ=Am/Ac ≤ 1. R=Earth radius, h=antenna height for LOS range</span></div>
+    <div class="mcq">
+      <div class="mcq-label">Practice MCQ</div>
+      <div class="mcq-q">Output of NAND gate when both inputs are 1:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt" onclick="pickOpt(this,false)">A) 1</div>
+        <div class="mcq-opt" onclick="pickOpt(this,true)">B) 0</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">C) Undefined</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">D) 1 and 0</div>
+      </div>
+      <div class="mcq-hint">NAND = NOT(AND). AND of 1,1 = 1. NOT(1) = <strong>0</strong>. NAND output is 0 only when BOTH inputs are 1 — all other combinations give 1.</div>
+    </div>
+    <div class="tip tp">For any logic gate MCQ: build the truth table mentally row by row. For 2-input gates: 4 rows (00,01,10,11). Takes 20 seconds and never fails.</div>
   </div>
 </div>
 
 </div><!-- end physics -->
 
-<!-- ════════════════════════════════
-     CHEMISTRY
-════════════════════════════════ -->
+<!-- ══════════════════════════════════════
+     CHEMISTRY (10 topics)
+══════════════════════════════════════ -->
 <div class="sec" id="sec-c">
 
-<!-- ELECTROCHEMISTRY -->
-<div class="card open">
+<div class="card open" data-id="c1" data-subj="c">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Electrochemistry</span>
-    <div class="cmeta"><span class="badge bc">2–3 Qs</span><span class="chev">▼</span></div>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Electrochemistry</span></div>
+    <div class="cmeta"><span class="badge bc">2–3 Qs</span><span class="badge bhot">🔥 HIGH YIELD</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
-    <div class="slbl">Cell potential</div>
-    <div class="frow"><span class="fm">E_cell = E°_cathode − E°_anode</span><span class="fn">Standard cell EMF; higher reduction potential = cathode</span></div>
-    <div class="frow"><span class="fm">E = E° − (0.059/n) log Q</span><span class="fn">Nernst equation at 25°C (simplified)</span></div>
-    <div class="frow"><span class="fm">ΔG° = −nFE°</span><span class="fn">Relationship between EMF and Gibbs energy</span></div>
-    <div class="slbl">Faraday's laws of electrolysis</div>
-    <div class="frow"><span class="fm">W = (M/nF) × I × t</span><span class="fn">Mass deposited W; F = 96500 C/mol</span></div>
-    <div class="frow"><span class="fm">Charge = nF per mole of electrons</span><span class="fn">n = electrons exchanged per ion</span></div>
-    <div class="tip tc">AEEE always asks: calculate mass deposited at electrode given current and time. Practice 5 such numericals.</div>
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-c"></div><div class="pdot lit-c"></div><div class="pdot lit-c"></div><div class="pdot lit-c"></div><div class="pdot lit-c"></div></div><span class="prio-text">5/5 — Faraday electrolysis numerical appears every year.</span></div>
+    <div class="frow"><span class="fm">E_cell = E°_cathode − E°_anode</span><span class="fn">Higher reduction potential = cathode (positive electrode). Lower = anode.</span></div>
+    <div class="frow"><span class="fm">E = E° − (0.059/n)log Q at 25°C</span><span class="fn">Nernst equation. At equilibrium: E=0, so E°=(0.059/n)log K</span></div>
+    <div class="frow"><span class="fm">ΔG° = −nFE° · F = 96500 C/mol</span><span class="fn">Spontaneous cell: E°>0, ΔG°<0, K>1 — all consistent</span></div>
+    <div class="frow"><span class="fm">W = (M/nF)×I×t (Faraday's law)</span><span class="fn">W=mass deposited (g), M=molar mass, n=electrons transferred, I=current(A), t=time(s)</span></div>
+    <div class="mcq">
+      <div class="mcq-label">Practice MCQ — Numerical Type</div>
+      <div class="mcq-q">How many grams of Cu (M=64) are deposited by 2A current in 965 seconds? (n=2, F=96500)</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt" onclick="pickOpt(this,false)">A) 3.2 g</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">B) 1.28 g</div>
+        <div class="mcq-opt" onclick="pickOpt(this,true)">C) 0.64 g</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">D) 6.4 g</div>
+      </div>
+      <div class="mcq-hint">W = (M/nF)×I×t = (64/(2×96500))×2×965 = (64/193000)×1930 = 64×0.01 = <strong>0.64 g</strong>. Charge = 2×965 = 1930 C = 0.02 F. 0.02 mol e⁻ deposits 0.01 mol Cu = 0.64 g.</div>
+    </div>
+    <div class="trap"><div class="trap-label">Common Traps</div><ul><li>n in Faraday's law = electrons transferred per ion, NOT valency in general. For Cu²⁺: n=2. For Al³⁺: n=3.</li><li>Cell EMF: cathode − anode (NOT anode − cathode). If you get negative, the reaction is non-spontaneous.</li></ul></div>
   </div>
 </div>
 
-<!-- EQUILIBRIUM & THERMO -->
-<div class="card open">
+<div class="card" data-id="c2" data-subj="c">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Chemical Equilibrium & Thermodynamics</span>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Chemical Equilibrium & Thermodynamics</span></div>
     <div class="cmeta"><span class="badge bc">2–3 Qs</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
-    <div class="slbl">Equilibrium</div>
-    <div class="frow"><span class="fm">Kc = [products] / [reactants]</span><span class="fn">Equilibrium constant in concentration terms</span></div>
-    <div class="frow"><span class="fm">Kp = Kc(RT)^Δn</span><span class="fn">Δn = moles gas products − moles gas reactants</span></div>
-    <div class="frow"><span class="fm">ΔG° = −RT lnKc</span><span class="fn">Links equilibrium constant to Gibbs energy</span></div>
-    <div class="slbl">Le Chatelier's principle</div>
-    <div class="crow"><p>Increase reactant concentration → equilibrium shifts right (more products)</p></div>
-    <div class="crow"><p>Increase pressure (gas reaction) → shifts toward fewer moles of gas</p></div>
-    <div class="crow"><p>Increase temperature → shifts in endothermic direction</p></div>
-    <div class="slbl">Thermodynamics</div>
-    <div class="frow"><span class="fm">ΔH = ΔU + ΔnRT</span><span class="fn">Relates enthalpy to internal energy</span></div>
-    <div class="frow"><span class="fm">Hess's law: ΔH = ΣΔH_prod − ΣΔH_react</span><span class="fn">Most tested thermochemistry formula</span></div>
-    <div class="frow"><span class="fm">ΔG = ΔH − TΔS</span><span class="fn">Spontaneous when ΔG < 0</span></div>
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-c"></div><div class="pdot lit-c"></div><div class="pdot lit-c"></div><div class="pdot lit-c"></div><div class="pdot"></div></div><span class="prio-text">4/5 — Le Chatelier + ΔG appear every paper.</span></div>
+    <div class="frow"><span class="fm">Kc=[products]/[reactants]</span><span class="fn">Each concentration raised to stoichiometric coefficient. Only gases and aqueous ions included.</span></div>
+    <div class="frow"><span class="fm">Kp = Kc(RT)^Δn · ΔG°=−RT lnK</span><span class="fn">Δn = Σ(moles gas products) − Σ(moles gas reactants)</span></div>
+    <div class="crow"><p>Le Chatelier: ↑reactant → right shift (more products). ↑pressure → fewer gas moles side. ↑T → endothermic direction.</p></div>
+    <div class="frow"><span class="fm">ΔH=ΔU+ΔnRT · ΔG=ΔH−TΔS</span><span class="fn">Spontaneous: ΔG<0. Hess's law: ΔH_rxn = ΣΔH_products − ΣΔH_reactants</span></div>
+    <div class="trap"><div class="trap-label">Common Traps</div><ul><li>Adding a catalyst does NOT shift equilibrium — it only reaches equilibrium faster. Kc is unchanged.</li><li>ΔG<0 = spontaneous at CONSTANT T,P. ΔH<0 alone doesn't guarantee spontaneity (need TΔS check).</li></ul></div>
   </div>
 </div>
 
-<!-- STOICHIOMETRY -->
-<div class="card open">
+<div class="card" data-id="c3" data-subj="c">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Stoichiometry & Mole Concept</span>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Stoichiometry & Mole Concept</span></div>
     <div class="cmeta"><span class="badge bc">2 Qs</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
-    <div class="frow"><span class="fm">n = m / M</span><span class="fn">n = moles, m = mass (g), M = molar mass (g/mol)</span></div>
-    <div class="frow"><span class="fm">n = V / 22.4 (at STP)</span><span class="fn">Volume of 1 mole gas at STP = 22.4 L</span></div>
-    <div class="frow"><span class="fm">Molarity M = n / V(litres)</span><span class="fn">Moles per litre of solution</span></div>
-    <div class="frow"><span class="fm">Molality m = n / W(kg solvent)</span><span class="fn">Moles per kg of solvent</span></div>
-    <div class="frow"><span class="fm">Eq. weight = M / n-factor</span><span class="fn">n-factor = electrons transferred or H⁺ displaced</span></div>
-    <div class="frow"><span class="fm">% yield = (actual/theoretical) × 100</span><span class="fn">Limiting reagent gives theoretical yield</span></div>
-    <div class="tip tc">Method: Identify limiting reagent first — whichever gives fewer moles of product. Calculate from that reactant only.</div>
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-c"></div><div class="pdot lit-c"></div><div class="pdot lit-c"></div><div class="pdot lit-c"></div><div class="pdot"></div></div><span class="prio-text">4/5 — Foundation for all numericals. Must be perfect.</span></div>
+    <div class="frow"><span class="fm">n=m/M · n=V/22.4(STP)</span><span class="fn">Convert everything to moles first. 1 mole gas at STP = 22.4 L</span></div>
+    <div class="frow"><span class="fm">Molarity=n/V(L) · Molality=n/W(kg)</span><span class="fn">Molarity changes with temperature. Molality does not (mass-based).</span></div>
+    <div class="frow"><span class="fm">%yield=(actual/theoretical)×100</span><span class="fn">Find limiting reagent first → that determines theoretical yield</span></div>
+    <div class="frow"><span class="fm">Eq.weight=M/n-factor</span><span class="fn">n-factor = electrons transferred (redox) or H⁺ displaced (acid-base)</span></div>
+    <div class="trap"><div class="trap-label">Common Traps</div><ul><li>Limiting reagent: divide moles of each reactant by its stoichiometric coefficient. Smaller value = limiting reagent.</li><li>STP (Standard conditions) = 0°C and 1 atm. Volume 22.4L/mol. NOT 25°C.</li></ul></div>
   </div>
 </div>
 
-<!-- ORGANIC CHEMISTRY -->
-<div class="card open">
+<div class="card" data-id="c4" data-subj="c">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Organic Chemistry — Named Reactions & Tests</span>
-    <div class="cmeta"><span class="badge bc">3–4 Qs</span><span class="chev">▼</span></div>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Organic Chemistry — Named Reactions & Functional Groups</span></div>
+    <div class="cmeta"><span class="badge bc">3–4 Qs</span><span class="badge bhot">🔥 HIGH YIELD</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-c"></div><div class="pdot lit-c"></div><div class="pdot lit-c"></div><div class="pdot lit-c"></div><div class="pdot lit-c"></div></div><span class="prio-text">5/5 — Pure recall. 3-4 free marks with one revision session.</span></div>
     <div class="slbl">Must-know named reactions</div>
-    <div class="crow"><p>Aldol condensation — two aldehydes/ketones join to form β-hydroxy carbonyl compound</p><span>Reagent: dilute NaOH</span></div>
-    <div class="crow"><p>Cannizzaro reaction — disproportionation of aldehyde with no α-H; gives acid + alcohol</p><span>Reagent: conc. NaOH; e.g. HCHO → CH₃OH + HCOONa</span></div>
-    <div class="crow"><p>Grignard reagent (RMgX) — reacts with carbonyl to add R group; produces alcohol after hydrolysis</p><span>Solvent: dry ether</span></div>
-    <div class="crow"><p>SN1 — unimolecular; 2-step; tertiary carbons, polar protic solvents; racemization</p></div>
-    <div class="crow"><p>SN2 — bimolecular; 1-step; primary carbons, polar aprotic solvents; inversion of configuration</p></div>
-    <div class="crow"><p>Markovnikov's rule — H adds to C with more H atoms already (electrophilic addition)</p></div>
-    <div class="crow"><p>Hofmann bromamide degradation — RCONH₂ + Br₂ + NaOH → RNH₂ (amine with one fewer C)</p></div>
+    <div class="crow"><p>Aldol condensation — two aldehydes/ketones → β-hydroxy carbonyl compound</p><span>Reagent: dilute NaOH. Reverse = retro-aldol.</span></div>
+    <div class="crow"><p>Cannizzaro — aldehyde with no α-H → acid + alcohol (disproportionation)</p><span>Reagent: conc. NaOH. E.g. HCHO → CH₃OH + HCOONa</span></div>
+    <div class="crow"><p>Grignard (RMgX) — reacts with carbonyl → adds R, gives alcohol after hydrolysis</p><span>Solvent: dry ether. Moisture destroys Grignard reagent.</span></div>
+    <div class="crow"><p>SN1: tertiary carbon, polar protic solvent, racemization (carbocation intermediate)</p></div>
+    <div class="crow"><p>SN2: primary carbon, polar aprotic solvent, inversion of configuration (backside attack)</p></div>
+    <div class="crow"><p>Markovnikov: H adds to C with MORE H (electrophilic addition to alkene)</p></div>
+    <div class="crow"><p>Hofmann bromamide: RCONH₂ + Br₂/NaOH → RNH₂ (amine with ONE FEWER carbon)</p></div>
     <div class="slbl">Functional group tests</div>
-    <div class="crow"><p>Aldehyde: gives silver mirror test (Tollen's), Fehling's test (brick red ppt)</p></div>
-    <div class="crow"><p>Carboxylic acid: effervescence with Na₂CO₃ (CO₂ gas)</p></div>
-    <div class="crow"><p>Alcohol: Lucas test — tertiary reacts immediately, primary doesn't</p></div>
-    <div class="tip tc">Don't memorize mechanisms step-by-step. Know: what goes in + conditions → what comes out. That's all AEEE tests.</div>
+    <div class="crow"><p>Aldehyde: Tollen's (silver mirror) + Fehling's (brick red ppt). Ketone: fails both.</p></div>
+    <div class="crow"><p>Carboxylic acid: effervescence with Na₂CO₃ (CO₂ gas released)</p></div>
+    <div class="crow"><p>Alcohol (Lucas test): Tertiary = immediate turbidity. Secondary = ~5 min. Primary = no reaction.</p></div>
+    <div class="trap"><div class="trap-label">Common Traps</div><ul><li>Aldehyde vs Ketone: aldehyde gives Tollen's test. Ketone does NOT (no −H on carbonyl carbon).</li><li>Hofmann: product has ONE FEWER carbon than starting material. RCONH₂ → RNH₂, not R+1.</li><li>SN1 gives racemization. SN2 gives inversion (Walden inversion). They're opposite outcomes.</li></ul></div>
   </div>
 </div>
 
-<!-- SOLUTIONS & ATOMIC STRUCTURE -->
-<div class="card open">
+<div class="card" data-id="c5" data-subj="c">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Solutions, Atomic Structure & Chemical Bonding</span>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Solutions, Atomic Structure & Chemical Bonding</span></div>
     <div class="cmeta"><span class="badge bc">3–4 Qs</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-c"></div><div class="pdot lit-c"></div><div class="pdot lit-c"></div><div class="pdot lit-c"></div><div class="pdot"></div></div><span class="prio-text">4/5 — Colligative properties + hybridization tested directly.</span></div>
     <div class="slbl">Colligative properties</div>
-    <div class="frow"><span class="fm">ΔTb = Kb × m × i</span><span class="fn">Boiling point elevation; i = van't Hoff factor</span></div>
-    <div class="frow"><span class="fm">ΔTf = Kf × m × i</span><span class="fn">Freezing point depression</span></div>
-    <div class="frow"><span class="fm">π = iCRT</span><span class="fn">Osmotic pressure; C = molarity, R = 0.0821 L·atm/mol·K</span></div>
-    <div class="frow"><span class="fm">i = 1 + α(n−1)</span><span class="fn">α = degree of dissociation, n = ions from 1 formula unit</span></div>
+    <div class="frow"><span class="fm">ΔTb=Kb·m·i · ΔTf=Kf·m·i</span><span class="fn">i=van't Hoff factor. i>1 for electrolytes (dissociation), i<1 for association.</span></div>
+    <div class="frow"><span class="fm">π=iCRT · i=1+α(n−1)</span><span class="fn">Osmotic pressure. α=degree of dissociation, n=ions from 1 formula unit</span></div>
     <div class="slbl">Atomic structure</div>
-    <div class="frow"><span class="fm">Eₙ = −13.6/n² eV (H atom)</span><span class="fn">Energy of hydrogen orbital</span></div>
-    <div class="frow"><span class="fm">Quantum numbers: n, l, m, s</span><span class="fn">l = 0 to n−1; m = −l to +l; s = ±½</span></div>
-    <div class="crow"><p>Aufbau: fill lowest energy orbitals first (1s 2s 2p 3s 3p 4s 3d...)</p></div>
-    <div class="crow"><p>Hund's rule: one electron in each degenerate orbital before pairing</p></div>
+    <div class="frow"><span class="fm">Eₙ=−13.6Z²/n² eV · rₙ=0.529n²/Z Å</span><span class="fn">H-atom. For He⁺: Z=2. Ground state n=1.</span></div>
+    <div class="crow"><p>Orbital filling order: 1s 2s 2p 3s 3p 4s 3d 4p 5s 4d... (Aufbau)</p><span>Mnemonic: "1s,2s,2p,3s,3p,4s,3d" — the 4s fills BEFORE 3d</span></div>
+    <div class="crow"><p>Hund's rule: one e⁻ in each degenerate orbital before pairing (half-filled extra stability)</p></div>
     <div class="crow"><p>Pauli exclusion: no two electrons with same 4 quantum numbers</p></div>
-    <div class="slbl">Chemical bonding</div>
-    <div class="crow"><p>VSEPR: count bond pairs + lone pairs around central atom to predict shape (linear, bent, tetrahedral, etc.)</p></div>
-    <div class="crow"><p>Hybridization: sp (linear), sp² (trigonal planar), sp³ (tetrahedral), sp³d (trigonal bipyramidal)</p></div>
+    <div class="slbl">Chemical bonding & hybridization</div>
+    <div class="crow"><p>sp: linear (180°) — BeCl₂, CO₂. sp²: trigonal planar (120°) — BF₃, SO₃. sp³: tetrahedral (109.5°) — CH₄, NH₃*</p></div>
+    <div class="crow"><p>sp³d: trigonal bipyramidal (90°/120°) — PCl₅. sp³d²: octahedral (90°) — SF₆</p></div>
+    <div class="crow"><p>VSEPR: lone pairs cause more repulsion → bond angles decrease. NH₃: 107° (1 lone pair). H₂O: 104.5° (2 lone pairs)</p></div>
+    <div class="trap"><div class="trap-label">Common Traps</div><ul><li>4s fills before 3d (Aufbau), but 4s empties BEFORE 3d when forming transition metal ions. So Fe is [Ar]3d⁶4s², but Fe²⁺ is [Ar]3d⁶ (loses 4s first).</li><li>i factor: NaCl → 2 ions (i=2). CaCl₂ → 3 ions (i=3). MgSO₄ → 2 ions (i=2).</li></ul></div>
   </div>
 </div>
 
-<!-- PERIODIC TABLE — NEW -->
-<div class="card">
+<div class="card" data-id="c6" data-subj="c">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Periodic Table — Trends & p-Block Elements</span>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Periodic Table — Trends & p-Block Elements</span></div>
     <div class="cmeta"><span class="badge bc">3–4 Qs</span><span class="badge bnew">NEW</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
-    <div class="slbl">Periodic trends (direction matters!)</div>
-    <div class="frow"><span class="fm">Atomic radius: ↑ down group, ← across period</span><span class="fn">Decreases left→right (more protons); increases top→bottom</span></div>
-    <div class="frow"><span class="fm">Ionization energy: ↓ down group, → across period</span><span class="fn">Opposite of radius. Exceptions: Be>B, N>O (half-filled stability)</span></div>
-    <div class="frow"><span class="fm">Electronegativity order: F>O>N>Cl>Br>C>H</span><span class="fn">Increases right and up the periodic table. Memorize this order.</span></div>
-    <div class="frow"><span class="fm">Electron affinity: Cl > F (exception)</span><span class="fn">F is smaller but electron repulsion makes Cl have higher EA</span></div>
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-c"></div><div class="pdot lit-c"></div><div class="pdot lit-c"></div><div class="pdot lit-c"></div><div class="pdot lit-c"></div></div><span class="prio-text">5/5 — Direct "which is largest/most electronegative" = instant marks.</span></div>
+    <div class="slbl">Periodic trends — direction is everything</div>
+    <div class="frow"><span class="fm">Atomic radius: ↓ group · ← period</span><span class="fn">Increases down (more shells) and left (fewer protons pull less)</span></div>
+    <div class="frow"><span class="fm">Ionization energy: ↑ group · → period</span><span class="fn">EXCEPTIONS: Be>B (s-orbital more stable), N>O (half-filled 2p extra stable)</span></div>
+    <div class="frow"><span class="fm">Electronegativity order: F>O>N>Cl>Br>C>H</span><span class="fn">Increases right and up. F is the most electronegative element.</span></div>
+    <div class="frow"><span class="fm">Electron affinity: Cl>F (exception)</span><span class="fn">F is smaller but small size causes lone pair repulsion → less EA than Cl</span></div>
     <div class="slbl">p-block key facts</div>
-    <div class="crow"><p>Group 15 (N, P): NH₃ is basic, pyramidal sp³. N₂ very stable (triple bond).</p></div>
-    <div class="crow"><p>Group 16 (O, S): H₂O is bent sp³ (2 lone pairs). H₂S has lower bp than H₂O despite higher MW.</p></div>
-    <div class="crow"><p>Group 17 (Halogens): Cl₂ bleaches in presence of water (HOCl). Bond energy: Cl-Cl > F-F > Br-Br.</p></div>
-    <div class="crow"><p>Group 18 (Noble gases): First noble gas compound XeF₂. He in balloons; Ar in light bulbs; Ne in neon signs.</p></div>
-    <div class="tip tc">AEEE tests "which is largest/most electronegative" — know direction of each trend and the two key exceptions: Be>B and N>O for ionization energy.</div>
+    <div class="crow"><p>Group 15 (N,P): NH₃ is pyramidal sp³ (107°, 1 lone pair). N≡N triple bond = very stable. PH₃ less basic than NH₃.</p></div>
+    <div class="crow"><p>Group 16 (O,S): H₂O bent sp³ (104.5°, 2 lone pairs). H₂S lower bp than H₂O (H₂O has H-bonding).</p></div>
+    <div class="crow"><p>Group 17 (Halogens): bond energy F-F<Cl-Cl>Br-Br (F-F anomalously weak due to lone pair repulsion)</p></div>
+    <div class="crow"><p>Group 18: first noble gas compound XeF₂. He = balloons (low density), Ar = light bulbs, Ne = neon signs</p></div>
+    <div class="mcq">
+      <div class="mcq-label">Practice MCQ</div>
+      <div class="mcq-q">Which has higher ionization energy: N or O?</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt" onclick="pickOpt(this,true)">A) N</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">B) O</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">C) Both equal</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">D) Cannot be determined</div>
+      </div>
+      <div class="mcq-hint"><strong>N</strong> has higher IE than O (exception to the general trend). N has half-filled 2p³ configuration which is extra stable. O starts pairing electrons, causing repulsion and making it easier to remove one.</div>
+    </div>
+    <div class="mnem"><div class="mnem-label">Memory Anchor — IE Exceptions</div><p>Normal trend: IE increases left to right. But: <strong>Be > B</strong> (s > p) and <strong>N > O</strong> (half-filled > paired). Remember: "<strong>Be Nice, Never Offer</strong>" = Be>B, N>O.</p></div>
   </div>
 </div>
 
-<!-- COORDINATION COMPOUNDS — NEW -->
-<div class="card">
+<div class="card" data-id="c7" data-subj="c">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Coordination Compounds</span>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Coordination Compounds</span></div>
     <div class="cmeta"><span class="badge bc">2–3 Qs</span><span class="badge bnew">NEW</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
-    <div class="slbl">Nomenclature rules</div>
-    <div class="crow"><p>Name order: ligands (alphabetical) → central metal → oxidation state in Roman numerals → counter ion</p><span>Example: [Co(NH₃)₄Cl₂]Cl = tetraamminedichloridocobalt(III) chloride</span></div>
-    <div class="crow"><p>Anionic ligands end in "-o": Cl⁻ = chlorido, CN⁻ = cyanido, OH⁻ = hydroxido, NO₂⁻ = nitrito</p></div>
-    <div class="crow"><p>Neutral ligands: NH₃ = ammine, H₂O = aqua, CO = carbonyl, NO = nitrosyl</p></div>
-    <div class="frow"><span class="fm">Coordination number = ligands attached to metal</span><span class="fn">CN=6 → octahedral; CN=4 → tetrahedral or square planar</span></div>
-    <div class="crow"><p>Oxidation state calculation: metal OS + ligand charges + counter ion charges = 0</p><span>Example: [Fe(CN)₆]³⁻ → Fe + 6(−1) = −3, so Fe = +3</span></div>
-    <div class="crow"><p>Isomerism: Geometric (cis-trans) for MA₂B₂ octahedral. Optical (non-superimposable mirror images).</p></div>
-    <div class="tip tc">Finding oxidation state appears every year — practice with 5 examples: [Cu(NH₃)₄]²⁺, [Fe(CN)₆]³⁻, [Cr(H₂O)₆]³⁺, [Co(en)₃]³⁺, [Ni(CO)₄].</div>
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-c"></div><div class="pdot lit-c"></div><div class="pdot lit-c"></div><div class="pdot lit-c"></div><div class="pdot"></div></div><span class="prio-text">4/5 — Oxidation state calculation appears directly.</span></div>
+    <div class="crow"><p>Naming: ligands alphabetically → metal → oxidation state (Roman) → counter ion</p><span>[Co(NH₃)₄Cl₂]Cl = tetraamminedichloridocobalt(III) chloride</span></div>
+    <div class="crow"><p>Anionic ligands end "-o": Cl⁻=chlorido, CN⁻=cyanido, OH⁻=hydroxido, NO₂⁻=nitrito</p></div>
+    <div class="crow"><p>Neutral ligands: NH₃=ammine, H₂O=aqua, CO=carbonyl, en=ethylenediamine</p></div>
+    <div class="frow"><span class="fm">OS: (metal OS) + Σ(ligand charges) + (counter ion charge) = 0</span><span class="fn">Example: [Fe(CN)₆]³⁻ → Fe + 6(−1) = −3 → Fe = +3</span></div>
+    <div class="crow"><p>CN=6: octahedral. CN=4: tetrahedral or square planar. CN=2: linear.</p></div>
+    <div class="crow"><p>Geometric isomerism: cis-trans in square planar MA₂B₂ or octahedral MA₄B₂.</p></div>
+    <div class="mcq">
+      <div class="mcq-label">Practice MCQ</div>
+      <div class="mcq-q">Oxidation state of Cr in [Cr(H₂O)₄Cl₂]⁺ is:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt" onclick="pickOpt(this,false)">A) +2</div>
+        <div class="mcq-opt" onclick="pickOpt(this,true)">B) +3</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">C) +4</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">D) 0</div>
+      </div>
+      <div class="mcq-hint">H₂O is neutral (0). Cl⁻ each = −1. Complex charge = +1. Cr + 0(4) + (−1)(2) = +1 → Cr − 2 = 1 → Cr = <strong>+3</strong>.</div>
+    </div>
   </div>
 </div>
 
-<!-- SOLID STATE & IONIC EQ — NEW -->
-<div class="card">
+<div class="card" data-id="c8" data-subj="c">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Solid State & Ionic Equilibrium</span>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Solid State & Ionic Equilibrium (pH, Buffers, Ksp)</span></div>
     <div class="cmeta"><span class="badge bc">2–3 Qs</span><span class="badge bnew">NEW</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-c"></div><div class="pdot lit-c"></div><div class="pdot lit-c"></div><div class="pdot lit-c"></div><div class="pdot lit-c"></div></div><span class="prio-text">5/5 — Henderson-Hasselbalch + Ksp appear every single year.</span></div>
     <div class="slbl">Crystal structures</div>
-    <div class="frow"><span class="fm">Simple cubic: 1 atom/cell, packing 52%</span><span class="fn">Corner atoms: 8 × (1/8) = 1</span></div>
-    <div class="frow"><span class="fm">BCC: 2 atoms/cell, packing 68%</span><span class="fn">1 (corners) + 1 (centre) = 2. Na, K, Fe.</span></div>
-    <div class="frow"><span class="fm">FCC: 4 atoms/cell, packing 74%</span><span class="fn">1 (corners) + 3 (faces) = 4. Cu, Al, Au — densest packing.</span></div>
-    <div class="frow"><span class="fm">d = nM / (Nₐ × a³)</span><span class="fn">Density; n = atoms/cell, a = edge length</span></div>
+    <div class="frow"><span class="fm">SC:1atom · BCC:2atoms · FCC:4atoms</span><span class="fn">Packing: SC=52%, BCC=68%, FCC=74%. FCC most efficient.</span></div>
+    <div class="frow"><span class="fm">d = nM/(Nₐ×a³)</span><span class="fn">Density of unit cell. n=atoms/cell, a=edge length, Nₐ=6.022×10²³</span></div>
     <div class="slbl">Ionic equilibrium</div>
-    <div class="frow"><span class="fm">Ka = [H⁺][A⁻] / [HA]</span><span class="fn">Acid dissociation constant; stronger acid → larger Ka</span></div>
-    <div class="frow"><span class="fm">pH = −log[H⁺]</span><span class="fn">pH + pOH = 14 at 25°C. Neutral water: pH=7</span></div>
-    <div class="frow"><span class="fm">pH of weak acid = ½(pKa − log C)</span><span class="fn">C = initial concentration of acid</span></div>
-    <div class="frow"><span class="fm">Henderson-Hasselbalch: pH = pKa + log([A⁻]/[HA])</span><span class="fn">Buffer equation — salt/acid buffer solutions</span></div>
-    <div class="frow"><span class="fm">Ksp = [Mⁿ⁺][Xⁿ⁻] (for MX salt)</span><span class="fn">Precipitation when Q > Ksp</span></div>
-    <div class="tip tc">Buffer and Ksp questions appear every year. For MₐXᵦ salt → Ksp = (as)ᵃ × (bs)ᵇ where s = solubility.</div>
+    <div class="frow"><span class="fm">pH=−log[H⁺] · pH+pOH=14 (25°C)</span><span class="fn">Strong acid: pH=−log(C). Neutral water pH=7.</span></div>
+    <div class="frow"><span class="fm">Weak acid: pH=½(pKa−logC)</span><span class="fn">Or: [H⁺]=√(Ka·C). Derive this from Ka = x²/C.</span></div>
+    <div class="frow"><span class="fm">Henderson-Hasselbalch: pH=pKa+log([A⁻]/[HA])</span><span class="fn">Buffer equation. At equal conc: pH=pKa. Buffer resists pH change.</span></div>
+    <div class="frow"><span class="fm">Ksp=[Mⁿ⁺]ᵃ[Xⁿ⁻]ᵇ for MₐXᵦ</span><span class="fn">Precipitation if Q>Ksp. No ppt if Q<Ksp. For MX: Ksp=s². For MX₂: Ksp=4s³.</span></div>
+    <div class="mcq">
+      <div class="mcq-label">Practice MCQ</div>
+      <div class="mcq-q">pH of a buffer with [CH₃COO⁻]=0.1M, [CH₃COOH]=0.01M, pKa=4.74:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt" onclick="pickOpt(this,false)">A) 4.74</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">B) 3.74</div>
+        <div class="mcq-opt" onclick="pickOpt(this,true)">C) 5.74</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">D) 4.0</div>
+      </div>
+      <div class="mcq-hint">pH = pKa + log([A⁻]/[HA]) = 4.74 + log(0.1/0.01) = 4.74 + log(10) = 4.74 + 1 = <strong>5.74</strong>.</div>
+    </div>
+    <div class="trap"><div class="trap-label">Common Traps</div><ul><li>FCC has 4 atoms/cell (NOT 8). The 8 corners each contribute 1/8, and 6 faces each contribute 1/2.</li><li>For Ksp: AgCl dissolves as Ag⁺+Cl⁻. Ksp=s². For Ag₂SO₄: 2Ag⁺+SO₄²⁻. Ksp=(2s)²(s)=4s³.</li></ul></div>
   </div>
 </div>
 
-<!-- SURFACE CHEMISTRY — NEW -->
-<div class="card">
+<div class="card" data-id="c9" data-subj="c">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Surface Chemistry & Colloids</span>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Surface Chemistry, Polymers & Biomolecules</span></div>
     <div class="cmeta"><span class="badge bc">2 Qs</span><span class="badge bnew">NEW</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
-    <div class="crow"><p>Physisorption: weak van der Waals, reversible, exothermic, decreases with temperature, multilayer</p></div>
-    <div class="crow"><p>Chemisorption: chemical bond, irreversible, forms monolayer, initially increases then decreases with temp</p></div>
-    <div class="crow"><p>Colloid size: 1–1000 nm (between true solution <1 nm and suspension >1000 nm)</p></div>
-    <div class="crow"><p>Tyndall effect: scattering of light by colloidal particles — distinguishes colloid from true solution</p></div>
-    <div class="crow"><p>Hardy-Schulze rule: higher valency of coagulating ion = more effective coagulation of colloid</p></div>
-    <div class="frow"><span class="fm">Activation energy with catalyst: E_a' < E_a</span><span class="fn">Catalyst lowers activation energy; doesn't affect equilibrium position</span></div>
-    <div class="tip tc">Surface chemistry MCQs are mostly conceptual. Know: Tyndall effect, physisorption vs chemisorption comparison, Hardy-Schulze rule for coagulation.</div>
-  </div>
-</div>
-
-<!-- POLYMERS & BIOMOLECULES — NEW -->
-<div class="card">
-  <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Polymers & Biomolecules</span>
-    <div class="cmeta"><span class="badge bc">2 Qs</span><span class="badge bnew">NEW</span><span class="chev">▼</span></div>
-  </div>
-  <div class="cbody">
-    <div class="slbl">Important polymers</div>
-    <div class="frow"><span class="fm">Nylon-6,6 (condensation)</span><span class="fn">Hexamethylenediamine + adipic acid. Fabrics, ropes.</span></div>
-    <div class="frow"><span class="fm">Teflon / PTFE (addition)</span><span class="fn">Polymerization of tetrafluoroethylene. Non-stick coatings.</span></div>
-    <div class="frow"><span class="fm">Bakelite (condensation)</span><span class="fn">Phenol + formaldehyde. Thermosetting — does not soften on reheating.</span></div>
-    <div class="frow"><span class="fm">Natural rubber: cis-polyisoprene</span><span class="fn">Vulcanization with S increases hardness and elasticity</span></div>
-    <div class="frow"><span class="fm">PVC (addition): vinyl chloride monomer</span><span class="fn">Pipes, cables. Thermoplastic — can be reshaped.</span></div>
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-c"></div><div class="pdot lit-c"></div><div class="pdot lit-c"></div><div class="pdot"></div><div class="pdot"></div></div><span class="prio-text">3/5 — Mostly conceptual. Quick revision = quick marks.</span></div>
+    <div class="crow"><p>Physisorption: van der Waals, reversible, multilayer, decreases with temperature</p></div>
+    <div class="crow"><p>Chemisorption: chemical bond, irreversible, monolayer, initially increases then decreases with temp</p></div>
+    <div class="crow"><p>Tyndall effect: colloidal particles scatter light beam (Tyndall cone). Not seen in true solution.</p></div>
+    <div class="crow"><p>Hardy-Schulze: higher valency of coagulating ion = more effective. Al³⁺ > Ca²⁺ > Na⁺ for negatively charged sol.</p></div>
+    <div class="slbl">Polymers — must know 5</div>
+    <div class="frow"><span class="fm">Nylon-6,6 (condensation)</span><span class="fn">Hexamethylenediamine + adipic acid. Thermoplastic. Ropes, fabrics.</span></div>
+    <div class="frow"><span class="fm">Bakelite (condensation)</span><span class="fn">Phenol + formaldehyde. THERMOSETTING — cannot be remolded.</span></div>
+    <div class="frow"><span class="fm">Teflon (addition) · PVC (addition)</span><span class="fn">Teflon from CF₂=CF₂ (non-stick). PVC from CH₂=CHCl (pipes, cables).</span></div>
+    <div class="frow"><span class="fm">Natural rubber: cis-polyisoprene</span><span class="fn">Vulcanization (+ sulfur crosslinks) → harder, more elastic</span></div>
     <div class="slbl">Biomolecules</div>
-    <div class="crow"><p>Glucose (C₆H₁₂O₆): reducing sugar; open chain has aldehyde; gives Tollen's and Fehling's test</p></div>
-    <div class="crow"><p>Sucrose: glucose + fructose; NON-reducing (no free anomeric OH). Fructose = sweetest sugar.</p></div>
-    <div class="crow"><p>Amino acids: contain both −NH₂ and −COOH groups. Peptide bond = −CO−NH− linkage.</p></div>
-    <div class="crow"><p>DNA: thymine, deoxyribose sugar, double helix. RNA: uracil, ribose sugar, single stranded.</p></div>
-    <div class="tip tc">Thermoplastic = can be reshaped (Nylon, PVC, Teflon). Thermosetting = cannot be reshaped (Bakelite). Addition polymer = one monomer. Condensation = two monomers + small molecule released.</div>
+    <div class="crow"><p>Glucose: reducing sugar. Open chain: aldehyde group. Gives Tollen's and Fehling's tests.</p></div>
+    <div class="crow"><p>Sucrose: glucose+fructose. Non-reducing (no free anomeric OH). Fructose = sweetest.</p></div>
+    <div class="crow"><p>DNA: thymine, deoxyribose, double helix. RNA: uracil, ribose, single stranded.</p></div>
+    <div class="trap"><div class="trap-label">Common Traps</div><ul><li>Thermoplastic vs thermosetting: Bakelite is thermosetting (can't be remolded). Nylon, PVC, Teflon are thermoplastic.</li><li>Sucrose is NON-reducing — it won't give Tollen's or Fehling's test. Glucose will.</li></ul></div>
   </div>
 </div>
 
-<!-- d-BLOCK — NEW -->
-<div class="card">
+<div class="card" data-id="c10" data-subj="c">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">d-Block (Transition) Elements</span>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">d-Block Elements & Periodic Trends Summary</span></div>
     <div class="cmeta"><span class="badge bc">2 Qs</span><span class="badge bnew">NEW</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
-    <div class="crow"><p>d-block: Groups 3–12 (Sc to Zn). Variable oxidation states due to similar energies of ns and (n−1)d electrons.</p></div>
-    <div class="crow"><p>Most stable states: Mn²⁺ (d⁵ half-filled), Fe³⁺ (d⁵), Cu²⁺ more stable than Cu⁺ in aqueous solution</p></div>
-    <div class="crow"><p>Paramagnetism: due to unpaired d electrons. More unpaired = more paramagnetic.</p></div>
-    <div class="crow"><p>Catalysts: Fe in Haber (N₂+3H₂→2NH₃); V₂O₅ in Contact process; Ni in hydrogenation; Pt in catalytic converters</p></div>
-    <div class="crow"><p>Colour in solution: due to d-d electron transitions. Cu²⁺=blue, Cr³⁺=green, Mn²⁺=pale pink, Fe³⁺=yellow</p></div>
-    <div class="frow"><span class="fm">KMnO₄: MnO₄⁻ → Mn²⁺ (gains 5e⁻, purple→colourless)</span><span class="fn">Strong oxidizing agent in acid medium. Oxidizes Fe²⁺, I⁻, oxalates.</span></div>
-    <div class="frow"><span class="fm">K₂Cr₂O₇: Cr₂O₇²⁻ → 2Cr³⁺ (gains 6e⁻, orange→green)</span><span class="fn">Oxidizes alcohols to aldehydes/acids in acid medium.</span></div>
-    <div class="tip tc">Know the catalyst-process pairs, common solution colours of ions, and both oxidizing agents (KMnO₄ and K₂Cr₂O₇) — these are 90% conceptual marks.</div>
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-c"></div><div class="pdot lit-c"></div><div class="pdot lit-c"></div><div class="pdot"></div><div class="pdot"></div></div><span class="prio-text">3/5 — Mostly recall. Know catalyst pairs and ion colours.</span></div>
+    <div class="crow"><p>Variable OS due to similar energy of ns and (n−1)d electrons. Most stable: Mn²⁺(d⁵), Fe³⁺(d⁵) — half-filled</p></div>
+    <div class="crow"><p>Colour: due to d-d electron transitions. Cu²⁺=blue, Cr³⁺=green, Mn²⁺=pale pink, Fe³⁺=yellow, Co²⁺=pink</p></div>
+    <div class="frow"><span class="fm">Industrial catalysts: Fe(Haber) · V₂O₅(Contact) · Ni(hydrogenation)</span><span class="fn">Haber: N₂+3H₂→2NH₃. Contact: SO₂→SO₃. Hydrogenation: oils→fats</span></div>
+    <div class="frow"><span class="fm">KMnO₄: MnO₄⁻→Mn²⁺ (purple→colourless, gains 5e⁻)</span><span class="fn">Strong oxidizing agent in acid. Oxidizes Fe²⁺, I⁻, C₂O₄²⁻.</span></div>
+    <div class="frow"><span class="fm">K₂Cr₂O₇: Cr₂O₇²⁻→2Cr³⁺ (orange→green, gains 6e⁻)</span><span class="fn">Oxidizes alcohols to aldehydes/acids. Used in breathalyzer test.</span></div>
   </div>
 </div>
 
 </div><!-- end chemistry -->
 
-<!-- ════════════════════════════════
-     QUANT APTITUDE
-════════════════════════════════ -->
+<!-- ══════════════════════════════════════
+     QUANT (3 topics)
+══════════════════════════════════════ -->
 <div class="sec" id="sec-q">
 
-<div class="card open">
+<div class="card open" data-id="q1" data-subj="q">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Ratios, Percentages, Profit & Loss</span>
-    <div class="cmeta"><span class="badge bq">3–4 Qs</span><span class="chev">▼</span></div>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Ratios, Percentages, Profit & Loss</span></div>
+    <div class="cmeta"><span class="badge bq">3–4 Qs</span><span class="badge bhot">🔥 FREE MARKS</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
-    <div class="frow"><span class="fm">% = (part/whole) × 100</span><span class="fn">Core percentage formula</span></div>
-    <div class="frow"><span class="fm">% change = (new−old)/old × 100</span><span class="fn">Increase/decrease percentage</span></div>
-    <div class="frow"><span class="fm">Profit% = (Profit/CP) × 100</span><span class="fn">CP = cost price, SP = selling price, Profit = SP−CP</span></div>
-    <div class="frow"><span class="fm">SP = CP × (100+P%) / 100</span><span class="fn">When profit % is known</span></div>
-    <div class="frow"><span class="fm">Discount% = (discount/MP) × 100</span><span class="fn">MP = marked price; SP = MP × (1−D%/100)</span></div>
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-q"></div><div class="pdot lit-q"></div><div class="pdot lit-q"></div><div class="pdot lit-q"></div><div class="pdot lit-q"></div></div><span class="prio-text">5/5 — Easiest marks in the exam. Must score 100% here.</span></div>
+    <div class="frow"><span class="fm">% = (part/whole)×100</span><span class="fn">% of a number: n% of X = (n/100)×X</span></div>
+    <div class="frow"><span class="fm">% change = (new−old)/old × 100</span><span class="fn">Positive = increase, negative = decrease</span></div>
+    <div class="frow"><span class="fm">Profit% = (SP−CP)/CP × 100</span><span class="fn">Loss% = (CP−SP)/CP × 100. SP = CP×(100+P%)/100</span></div>
+    <div class="frow"><span class="fm">Discount% = (MP−SP)/MP × 100</span><span class="fn">SP = MP×(1−D%/100). Successive discounts d₁,d₂: use (1−d₁/100)(1−d₂/100)</span></div>
+    <div class="mcq">
+      <div class="mcq-label">Practice MCQ</div>
+      <div class="mcq-q">An article bought for ₹800 is sold at ₹1000. Profit percent is:</div>
+      <div class="mcq-opts">
+        <div class="mcq-opt" onclick="pickOpt(this,false)">A) 25%</div>
+        <div class="mcq-opt" onclick="pickOpt(this,true)">B) 25%</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">C) 20%</div>
+        <div class="mcq-opt" onclick="pickOpt(this,false)">D) 15%</div>
+      </div>
+      <div class="mcq-hint">Profit = 1000−800 = 200. Profit% = (200/800)×100 = <strong>25%</strong>. Always divide by CP (cost price), not SP.</div>
+    </div>
+    <div class="trap"><div class="trap-label">Common Traps</div><ul><li>Profit% = profit/CP × 100 (NOT profit/SP). Dividing by SP gives markup percentage, not profit%.</li><li>Two successive discounts of 20% each ≠ 40% total. Actual = 1−(0.8)(0.8) = 36% total discount.</li></ul></div>
   </div>
 </div>
 
-<div class="card">
+<div class="card" data-id="q2" data-subj="q">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Time-Speed-Distance, Work & Averages</span>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Time-Speed-Distance, Work & Averages</span></div>
     <div class="cmeta"><span class="badge bq">3 Qs</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
-    <div class="frow"><span class="fm">Speed = Distance / Time</span><span class="fn">Convert km/h to m/s: multiply by 5/18</span></div>
-    <div class="frow"><span class="fm">Avg speed = 2S₁S₂ / (S₁+S₂)</span><span class="fn">When equal distances at speeds S₁ and S₂</span></div>
-    <div class="frow"><span class="fm">Work rate = 1/n per day</span><span class="fn">If A finishes in n days, rate = 1/n per day</span></div>
-    <div class="frow"><span class="fm">Together: 1/T = 1/A + 1/B</span><span class="fn">Combined time when A takes A days, B takes B days</span></div>
-    <div class="frow"><span class="fm">Average = Sum / Count</span><span class="fn">If average changes, set up equation and solve</span></div>
+    <div class="frow"><span class="fm">Speed=D/T · km/h→m/s: ×5/18</span><span class="fn">Always convert units to same system before calculating</span></div>
+    <div class="frow"><span class="fm">Avg speed=2S₁S₂/(S₁+S₂)</span><span class="fn">Harmonic mean — only when EQUAL distances at different speeds</span></div>
+    <div class="frow"><span class="fm">Work rate=1/n · 1/T=1/A+1/B</span><span class="fn">If A does in A days, B in B days, together: T=AB/(A+B)</span></div>
+    <div class="frow"><span class="fm">Average = ΣX / n</span><span class="fn">If avg changes: set up equation. New avg × new count = new sum.</span></div>
+    <div class="trap"><div class="trap-label">Common Traps</div><ul><li>Average speed formula 2S₁S₂/(S₁+S₂) only works when distances are equal. If times are equal, use simple average (S₁+S₂)/2.</li><li>In work problems: check if they work together the whole time or one joins later.</li></ul></div>
   </div>
 </div>
 
-<div class="card">
+<div class="card" data-id="q3" data-subj="q">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Simple & Compound Interest, Number Series</span>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Simple & Compound Interest, Number Series</span></div>
     <div class="cmeta"><span class="badge bq">3 Qs</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
-    <div class="frow"><span class="fm">SI = PRT / 100</span><span class="fn">P = principal, R = rate%, T = time in years</span></div>
-    <div class="frow"><span class="fm">CI: A = P(1 + R/100)ᵀ</span><span class="fn">Amount after T years; CI = A − P</span></div>
-    <div class="frow"><span class="fm">CI − SI = P(R/100)² for 2 yrs</span><span class="fn">Quick shortcut for 2-year difference questions</span></div>
-    <div class="slbl">Number series patterns</div>
-    <div class="crow"><p>Arithmetic series: each term differs by constant d (find d = T₂ − T₁)</p></div>
-    <div class="crow"><p>Geometric series: each term multiplied by constant r (find r = T₂/T₁)</p></div>
-    <div class="crow"><p>Difference series: check differences of consecutive terms — often form AP/GP themselves</p></div>
-    <div class="crow"><p>Square/cube series: 1,4,9,16... or 1,8,27,64... — spot perfect squares or cubes</p></div>
-    <div class="tip tq">Strategy: For number series, immediately compute differences between consecutive terms. Constant → AP. Constant ratio → GP. Differences form AP → quadratic sequence.</div>
+    <div class="frow"><span class="fm">SI=PRT/100</span><span class="fn">P=principal, R=rate%, T=years. Amount = P+SI.</span></div>
+    <div class="frow"><span class="fm">CI: A=P(1+R/100)ᵀ · CI=A−P</span><span class="fn">Half-yearly: R/2 and T×2. Quarterly: R/4 and T×4.</span></div>
+    <div class="frow"><span class="fm">CI−SI = P(R/100)² (for 2 years)</span><span class="fn">Quick shortcut. For 3 years: CI−SI = P(R/100)²(3+R/100)</span></div>
+    <div class="slbl">Number series — identify the pattern</div>
+    <div class="crow"><p>Step 1: compute consecutive differences. Constant → AP. Differences form GP → mixed series.</p></div>
+    <div class="crow"><p>Step 2: if differences not constant, compute 2nd differences. Constant → quadratic (n² pattern).</p></div>
+    <div class="crow"><p>Step 3: check ratios if differences fail. Constant ratio → GP. Alternating pattern → two interleaved series.</p></div>
+    <div class="tip tq">For number series: first 10 seconds = compute differences. Next 10 seconds = check ratios. In 20 seconds you'll identify 90% of series patterns in AEEE.</div>
   </div>
 </div>
 
 </div><!-- end quant -->
 
-<!-- ════════════════════════════════
-     ENGLISH
-════════════════════════════════ -->
+<!-- ══════════════════════════════════════
+     ENGLISH (2 topics)
+══════════════════════════════════════ -->
 <div class="sec" id="sec-e">
 
-<div class="card open">
+<div class="card open" data-id="e1" data-subj="e">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Synonyms, Antonyms & Analogies — High-Frequency Word List</span>
-    <div class="cmeta"><span class="badge be">3 Qs</span><span class="chev">▼</span></div>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Synonyms, Antonyms & Analogies</span></div>
+    <div class="cmeta"><span class="badge be">3 Qs</span><span class="badge bhot">🔥 FREE MARKS</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
-    <div class="slbl">High-frequency word pairs</div>
-    <div class="frow"><span class="fm">Abate → Decrease / Diminish</span><span class="fn">Antonym: Increase, Intensify</span></div>
-    <div class="frow"><span class="fm">Benevolent → Generous / Kind</span><span class="fn">Antonym: Malevolent, Cruel</span></div>
-    <div class="frow"><span class="fm">Candid → Frank / Honest</span><span class="fn">Antonym: Evasive, Dishonest</span></div>
-    <div class="frow"><span class="fm">Diligent → Hardworking / Industrious</span><span class="fn">Antonym: Lazy, Indolent</span></div>
-    <div class="frow"><span class="fm">Eloquent → Fluent / Articulate</span><span class="fn">Antonym: Inarticulate, Tongue-tied</span></div>
-    <div class="frow"><span class="fm">Frugal → Thrifty / Economical</span><span class="fn">Antonym: Extravagant, Wasteful</span></div>
-    <div class="frow"><span class="fm">Haughty → Arrogant / Proud</span><span class="fn">Antonym: Humble, Modest</span></div>
-    <div class="frow"><span class="fm">Impede → Hinder / Obstruct</span><span class="fn">Antonym: Facilitate, Assist</span></div>
-    <div class="frow"><span class="fm">Jovial → Cheerful / Merry</span><span class="fn">Antonym: Gloomy, Melancholic</span></div>
-    <div class="frow"><span class="fm">Lethargic → Sluggish / Inactive</span><span class="fn">Antonym: Energetic, Active</span></div>
-    <div class="frow"><span class="fm">Meticulous → Careful / Precise</span><span class="fn">Antonym: Careless, Sloppy</span></div>
-    <div class="frow"><span class="fm">Novel → New / Original</span><span class="fn">Antonym: Old, Conventional</span></div>
-    <div class="frow"><span class="fm">Obscure → Unclear / Vague</span><span class="fn">Antonym: Clear, Obvious</span></div>
-    <div class="frow"><span class="fm">Prudent → Wise / Cautious</span><span class="fn">Antonym: Reckless, Imprudent</span></div>
-    <div class="tip te">Analogy tip: identify the relationship first (cause→effect, part→whole, worker→tool). Apply same relationship to the question pair.</div>
+    <div class="prio"><span class="prio-label">Priority</span><div class="prio-dots"><div class="pdot lit-e"></div><div class="pdot lit-e"></div><div class="pdot lit-e"></div><div class="pdot lit-e"></div><div class="pdot lit-e"></div></div><span class="prio-text">5/5 — Zero calculation. Pure recall. Must score 100% here.</span></div>
+    <div class="slbl">High-frequency word pairs (AEEE favourites)</div>
+    <div class="frow"><span class="fm">Abate → Decrease/Diminish</span><span class="fn">Antonym: Increase, Intensify. "The storm abated."</span></div>
+    <div class="frow"><span class="fm">Benevolent → Generous/Kind</span><span class="fn">Antonym: Malevolent, Cruel. "Bene" = good (Latin)</span></div>
+    <div class="frow"><span class="fm">Candid → Frank/Honest</span><span class="fn">Antonym: Evasive, Dishonest</span></div>
+    <div class="frow"><span class="fm">Diligent → Hardworking/Industrious</span><span class="fn">Antonym: Lazy, Indolent</span></div>
+    <div class="frow"><span class="fm">Eloquent → Fluent/Articulate</span><span class="fn">Antonym: Inarticulate. "Eloquent speaker"</span></div>
+    <div class="frow"><span class="fm">Frugal → Thrifty/Economical</span><span class="fn">Antonym: Extravagant, Wasteful</span></div>
+    <div class="frow"><span class="fm">Haughty → Arrogant/Proud</span><span class="fn">Antonym: Humble, Modest</span></div>
+    <div class="frow"><span class="fm">Impede → Hinder/Obstruct</span><span class="fn">Antonym: Facilitate, Assist</span></div>
+    <div class="frow"><span class="fm">Jovial → Cheerful/Merry</span><span class="fn">Antonym: Gloomy, Melancholic</span></div>
+    <div class="frow"><span class="fm">Lethargic → Sluggish/Inactive</span><span class="fn">Antonym: Energetic, Active</span></div>
+    <div class="frow"><span class="fm">Meticulous → Careful/Precise</span><span class="fn">Antonym: Careless, Sloppy</span></div>
+    <div class="frow"><span class="fm">Novel → New/Original</span><span class="fn">Antonym: Old, Conventional</span></div>
+    <div class="frow"><span class="fm">Obscure → Unclear/Vague</span><span class="fn">Antonym: Clear, Obvious</span></div>
+    <div class="frow"><span class="fm">Prudent → Wise/Cautious</span><span class="fn">Antonym: Reckless, Imprudent. "Prudent investment"</span></div>
+    <div class="tip te">Analogy method: identify relationship first (cause→effect, part→whole, worker→tool, degree of intensity). Then apply the same relationship to the answer pair.</div>
   </div>
 </div>
 
-<div class="card">
+<div class="card" data-id="e2" data-subj="e">
   <div class="chdr" onclick="tog(this)">
-    <span class="ctitle">Grammar — Articles, Prepositions, Tenses & Verbs</span>
+    <div class="cleft"><div class="cchk" onclick="event.stopPropagation();markDone(this)">✓</div><span class="ctitle">Grammar — Articles, Prepositions, Tenses</span></div>
     <div class="cmeta"><span class="badge be">2 Qs</span><span class="chev">▼</span></div>
   </div>
   <div class="cbody">
-    <div class="slbl">Articles (a, an, the)</div>
-    <div class="crow"><p>"a" → before consonant sounds: a book, a university (note: 'u' sounds like 'y')</p></div>
-    <div class="crow"><p>"an" → before vowel sounds: an apple, an hour (note: 'h' is silent here)</p></div>
-    <div class="crow"><p>"the" → specific/known noun; unique things (the sun); superlatives (the best)</p></div>
-    <div class="crow"><p>No article → general plural nouns (Dogs are loyal), languages, subjects (I study Physics)</p></div>
-    <div class="slbl">Prepositions</div>
-    <div class="frow"><span class="fm">in: months, years, cities</span><span class="fn">in January / in 2026 / in Chennai</span></div>
-    <div class="frow"><span class="fm">on: days, dates, surfaces</span><span class="fn">on Monday / on 21st April / on the table</span></div>
-    <div class="frow"><span class="fm">at: specific time or place</span><span class="fn">at 9 AM / at the station / at home</span></div>
-    <div class="slbl">Common tense rules</div>
-    <div class="crow"><p>Simple past: use "did" in question/negative; no "-ed" with "did" (I did go, not I did went)</p></div>
-    <div class="crow"><p>Present perfect: have/has + past participle — for actions with present relevance (I have studied)</p></div>
-    <div class="crow"><p>Subject-verb agreement: singular subject → singular verb (The team is, not The team are)</p></div>
+    <div class="slbl">Articles</div>
+    <div class="crow"><p>"a" before CONSONANT sounds: a book, a university ('yu' sound), a European</p></div>
+    <div class="crow"><p>"an" before VOWEL sounds: an apple, an hour ('h' silent), an MBA</p></div>
+    <div class="crow"><p>"the" for specific/known noun, unique things (the sun, the Eiffel Tower), superlatives (the best)</p></div>
+    <div class="crow"><p>No article: general plural (Dogs are loyal), abstract nouns (Love is blind), languages, subjects</p></div>
+    <div class="slbl">Prepositions (in/on/at)</div>
+    <div class="frow"><span class="fm">in: months, years, cities, countries</span><span class="fn">in January, in 2026, in Chennai, in India</span></div>
+    <div class="frow"><span class="fm">on: days, dates, specific surfaces</span><span class="fn">on Monday, on 22nd April, on the table</span></div>
+    <div class="frow"><span class="fm">at: specific time, place, address</span><span class="fn">at 9 AM, at the station, at 42 Main Street</span></div>
+    <div class="slbl">Tense rules</div>
+    <div class="crow"><p>Simple past: use "did" in question/negative; main verb stays base form (I did go, NOT I did went)</p></div>
+    <div class="crow"><p>Present perfect: have/has + past participle. For actions with present relevance.</p></div>
+    <div class="crow"><p>Subject-verb agreement: "The team is" (collective = singular). "The members are" (plural noun = plural verb)</p></div>
+    <div class="trap"><div class="trap-label">Common Traps</div><ul><li>"a university" not "an university" — because 'u' in university sounds like 'y' (consonant sound)</li><li>"an hour" not "a hour" — because 'h' in hour is silent (vowel sound)</li></ul></div>
   </div>
 </div>
 
 </div><!-- end english -->
-
 </div><!-- end main -->
 
+<!-- ── STICKY SCORE BAR ── -->
+<div class="stickybar">
+  <span class="sbar-item"><span class="sbar-total" id="sb-done">0</span><span class="sbar-mark">/34 topics mastered</span></span>
+  <span class="sbar-sep">·</span>
+  <span class="sbar-item" style="color:var(--mlt)">M: <span id="sb-m">0/9</span></span>
+  <span class="sbar-item" style="color:var(--plt)">P: <span id="sb-p">0/10</span></span>
+  <span class="sbar-item" style="color:var(--clt)">C: <span id="sb-c">0/10</span></span>
+  <span class="sbar-item" style="color:var(--qlt)">Q: <span id="sb-q">0/3</span></span>
+  <span class="sbar-item" style="color:var(--elt)">E: <span id="sb-e">0/2</span></span>
+  <span class="sbar-sep">·</span>
+  <span style="font-size:11px;color:var(--text3)">Tick ✓ on each card when mastered</span>
+</div>
+
 <script>
+// ── Search index ──
+const INDEX = [];
+document.querySelectorAll('.card').forEach(card => {
+  const topic = card.querySelector('.ctitle')?.textContent || '';
+  const subj = card.dataset.subj || '';
+  card.querySelectorAll('.frow').forEach(row => {
+    const fm = row.querySelector('.fm')?.textContent || '';
+    const fn = row.querySelector('.fn')?.textContent || '';
+    INDEX.push({ topic, subj, fm, fn, card });
+  });
+  card.querySelectorAll('.crow p').forEach(p => {
+    INDEX.push({ topic, subj, fm: p.textContent, fn: '', card });
+  });
+});
+
+function doSearch(q) {
+  const wrap = document.getElementById('srch-results');
+  const nav = document.querySelector('.navwrap');
+  const main = document.querySelector('.main');
+  if (!q.trim()) { wrap.style.display='none'; nav.style.display=''; main.style.display=''; return; }
+  const terms = q.toLowerCase().split(' ').filter(Boolean);
+  const hits = INDEX.filter(item => terms.every(t => (item.fm+item.fn+item.topic).toLowerCase().includes(t)));
+  nav.style.display = hits.length ? 'none' : '';
+  main.style.display = hits.length ? 'none' : '';
+  wrap.style.display = hits.length ? 'block' : 'none';
+  if (!hits.length) { wrap.innerHTML='<div style="padding:10px 0;color:var(--text3);font-size:13px">No results found.</div>'; return; }
+  wrap.innerHTML = hits.slice(0,25).map(h => `
+    <div class="sr-item" onclick="jumpTo('${h.card.dataset.id}','${h.subj}')">
+      <div class="sr-topic">${h.topic}</div>
+      <div class="sr-formula">${h.fm.slice(0,80)}</div>
+      ${h.fn ? `<div class="sr-note">${h.fn.slice(0,100)}</div>` : ''}
+    </div>`).join('');
+}
+
+function jumpTo(cardId, subj) {
+  document.getElementById('srch').value = '';
+  document.getElementById('srch-results').style.display = 'none';
+  document.querySelector('.navwrap').style.display = '';
+  document.querySelector('.main').style.display = '';
+  const subjMap = {m:'am',p:'ap',c:'ac',q:'aq',e:'ae'};
+  const btn = document.querySelector(`.nbtn.${subjMap[subj]}`)||document.querySelectorAll('.nbtn')[{m:0,p:1,c:2,q:3,e:4}[subj]];
+  show(subj, btn, subjMap[subj]);
+  setTimeout(() => {
+    const card = document.querySelector(`[data-id="${cardId}"]`);
+    if (card) { card.classList.add('open'); card.scrollIntoView({behavior:'smooth',block:'center'}); }
+  }, 50);
+}
+
+// ── Tab switching ──
 function show(id, btn, cls) {
   document.querySelectorAll('.sec').forEach(s => s.classList.remove('vis'));
   document.querySelectorAll('.nbtn').forEach(b => b.classList.remove('am','ap','ac','aq','ae'));
   document.getElementById('sec-'+id).classList.add('vis');
   btn.classList.add(cls);
 }
+
+// ── Card toggle ──
 function tog(hdr) { hdr.closest('.card').classList.toggle('open'); }
+
+// ── Mark done ──
+const TOTALS = {m:9,p:10,c:10,q:3,e:2};
+function markDone(chk) {
+  const card = chk.closest('.card');
+  card.classList.toggle('done');
+  saveProgress();
+  updateDash();
+}
+
+function saveProgress() {
+  const done = {};
+  document.querySelectorAll('.card.done').forEach(c => { done[c.dataset.id] = 1; });
+  try { localStorage.setItem('aeee2026', JSON.stringify(done)); } catch(e){}
+}
+
+function loadProgress() {
+  try {
+    const done = JSON.parse(localStorage.getItem('aeee2026') || '{}');
+    Object.keys(done).forEach(id => {
+      const card = document.querySelector(`[data-id="${id}"]`);
+      if (card) card.classList.add('done');
+    });
+  } catch(e){}
+  updateDash();
+}
+
+function updateDash() {
+  const subjMap = {m:9,p:10,c:10,q:3,e:2};
+  let total = 0;
+  Object.keys(subjMap).forEach(s => {
+    const done = document.querySelectorAll(`[data-subj="${s}"].done`).length;
+    const tot = subjMap[s];
+    total += done;
+    const pct = Math.round((done/tot)*100);
+    document.getElementById(`ds-${s}`).textContent = `${done}/${tot}`;
+    document.getElementById(`dp-${s}`).textContent = `${pct}% mastered`;
+    document.getElementById(`sb-${s}`).textContent = `${done}/${tot}`;
+    const dc = document.getElementById(`dc-${s}`);
+    if (dc) dc.style.setProperty('--fill', pct+'%');
+  });
+  document.getElementById('ds-total').textContent = `${total}/34`;
+  document.getElementById('sb-done').textContent = total;
+  const totPct = Math.round((total/34)*100);
+  document.getElementById('dp-total').textContent = totPct < 100 ? `${totPct}% complete — keep going!` : '🎯 100% — You\'re ready!';
+}
+
+function resetAll() {
+  if (!confirm('Reset all progress?')) return;
+  document.querySelectorAll('.card.done').forEach(c => c.classList.remove('done'));
+  try { localStorage.removeItem('aeee2026'); } catch(e){}
+  updateDash();
+}
+
+// ── MCQ interaction ──
+function pickOpt(el, isCorrect) {
+  const mcq = el.closest('.mcq');
+  if (mcq.dataset.answered) return;
+  mcq.dataset.answered = 1;
+  mcq.querySelectorAll('.mcq-opt').forEach(o => {
+    const correct = o.onclick.toString().includes('true');
+    if (correct) o.classList.add('reveal-correct');
+  });
+  el.classList.add(isCorrect ? 'correct' : 'wrong');
+  mcq.querySelector('.mcq-hint').classList.add('show');
+}
+
+loadProgress();
 </script>
 </body>
 </html>
